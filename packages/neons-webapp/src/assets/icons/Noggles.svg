@@ -1,0 +1,6 @@
+<svg viewBox="0 0 24 24">
+    <path d="M19,9h-1h-1h-1h-1h-1v1v1h-1v-1V9h-1h-1h-1H9H8H7v1v1H6H5H4v1v1v1h1v-1v-1h1h1v1v1v1h1h1h1h1h1h1v-1v-1v-1h1v1v1v1h1h1h1h1
+h1h1v-1v-1v-1v-1v-1V9H19z M9,14H8v-1v-1v-1v-1h1h1v1v1v1v1H9z M16,14h-1v-1v-1v-1v-1h1h1v1v1v1v1H16z"/>
+    <rect x="8" y="10" width="2" height="4" style="fill: rgb(118, 116, 116);"/>
+     <rect x="15" y="10" width="2" height="4" style="fill: rgb(118, 116, 116);"/>
+</svg>

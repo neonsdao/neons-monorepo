@@ -1,0 +1,15 @@
+node_modules
+.npmrc
+.env
+.vscode
+build/
+dist
+/**/sha.ts
+/**/sha.h
+*.tgz
+.DS_Store
+*.tsbuildinfo
+*.log
+
+/**/.env
+/**/.npmrc

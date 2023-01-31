@@ -1,0 +1,27 @@
+{
+  "name": "@neons/sdk",
+  "version": "0.4.5",
+  "description": "Useful tooling for interacting with the Neons protocol",
+  "author": "Agent Smiths",
+  "homepage": "https://neons.lol",
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist tsconfig.build.tsbuildinfo",
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "yarn build",
+    "test": "mocha -r ts-node/register \"test/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@neons/contracts": "^0.3.3",
+    "ethers": "^5.6.8"
+  },
+  "devDependencies": {
+    "@types/pngjs": "^6.0.1",
+    "pngjs": "^6.0.0"
+  },
+  "peerDependencies": {
+    "ethers": ">=5.0.0"
+  }
+}

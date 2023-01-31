@@ -1,0 +1,11 @@
+{
+  "references": [
+    { "path": "packages/neons-api" },
+    { "path": "packages/neons-assets" },
+    { "path": "packages/neons-bots" },
+    { "path": "packages/neons-contracts" },
+    { "path": "packages/neons-sdk" },
+    { "path": "packages/neons-subgraph" },
+    { "path": "packages/neons-webapp" }
+  ]
+}
