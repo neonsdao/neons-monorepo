@@ -301,6 +301,82 @@ const Bid: React.FC<{
           </>
         )}
       </InputGroup>
+      {!auctionEnded && (
+        <InputGroup style={{ width: '75%', marginLeft: '-0.6rem', marginTop: '5px' }}>
+          <Col lg={3}>
+            <Button
+              className={auctionEnded ? classes.bidBtnAuctionEnded : classes.bidBtn}
+              onClick={
+                auctionEnded
+                  ? settleAuctionHandler
+                  : () =>
+                      setBidInput(
+                        String(
+                          Math.floor(Number(utils.formatEther(auction.amount.toString())) * 1.1),
+                        ),
+                      )
+              }
+              disabled={isDisabled}
+            >
+              {bidButtonContent.loading ? <Spinner animation="border" /> : '+10%'}
+            </Button>
+          </Col>
+          <Col lg={3}>
+            <Button
+              className={auctionEnded ? classes.bidBtnAuctionEnded : classes.bidBtn}
+              onClick={
+                auctionEnded
+                  ? settleAuctionHandler
+                  : () =>
+                      setBidInput(
+                        String(
+                          Math.floor(Number(utils.formatEther(auction.amount.toString())) * 1.25),
+                        ),
+                      )
+              }
+              disabled={isDisabled}
+            >
+              {bidButtonContent.loading ? <Spinner animation="border" /> : '+25%'}
+            </Button>
+          </Col>
+          <Col lg={3}>
+            <Button
+              className={auctionEnded ? classes.bidBtnAuctionEnded : classes.bidBtn}
+              onClick={
+                auctionEnded
+                  ? settleAuctionHandler
+                  : () =>
+                      setBidInput(
+                        String(
+                          Math.floor(Number(utils.formatEther(auction.amount.toString())) * 1.5),
+                        ),
+                      )
+              }
+              disabled={isDisabled}
+            >
+              {bidButtonContent.loading ? <Spinner animation="border" /> : '+50%'}
+            </Button>
+          </Col>
+          <Col lg={3}>
+            <Button
+              className={auctionEnded ? classes.bidBtnAuctionEnded : classes.bidBtn}
+              onClick={
+                auctionEnded
+                  ? settleAuctionHandler
+                  : () =>
+                      setBidInput(
+                        String(
+                          Math.floor(Number(utils.formatEther(auction.amount.toString())) * 2),
+                        ),
+                      )
+              }
+              disabled={isDisabled}
+            >
+              {bidButtonContent.loading ? <Spinner animation="border" /> : '+100%'}
+            </Button>
+          </Col>
+        </InputGroup>
+      )}
     </>
   );
 };
