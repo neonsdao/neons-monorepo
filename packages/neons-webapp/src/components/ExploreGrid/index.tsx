@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import classes from './ExploreGrid.module.css';
 import cx from 'classnames';
 import ExploreGridItem from './ExploreGridItem';
@@ -18,103 +18,93 @@ interface ExploreGridProps {
   buttonsRef: React.MutableRefObject<(HTMLButtonElement | null)[]>;
 }
 
-// noun.pics object
-type NounPic = {
-  id: number | null;
-  svg: string | undefined;
-};
-
 type Noun = {
   id: number | null;
   imgSrc: string | undefined;
 };
 
+const placeholderNoun: Noun = { id: null, imgSrc: undefined };
+
 const ExploreGrid: React.FC<ExploreGridProps> = props => {
-  const [individualNouns, setIndividualNouns] = useState<Noun[]>([]);
-  const placeholderNoun: Noun = { id: null, imgSrc: undefined };
+  /* ---------------------------------- props --------------------------------- */
+  const nounsCount = props.nounCount;
+  const setNounsList = props.setNounsList;
+  const sortOrder = props.sortOrder;
 
-  // Handle events
-  const getInitialNouns = (individualCount: number) => {
-    // Fetch initial nouns by url
-    const nouns = new Array(individualCount)
-      .fill(placeholderNoun)
-      .map((x, i): Noun => {
-        return {
-          id: i + (props.nounCount - individualCount),
-          imgSrc: `https://noun.pics/${i + (props.nounCount - individualCount)}.svg`,
-        };
-      })
-      .reverse();
-
-    setIndividualNouns(nouns);
-    // After initial nouns are set, run range calls
-    rangeCalls(props.nounCount, nouns);
-
-    // Add initial nouns to end of placeholder array to display them first on load
-    props.setNounsList((arr: Noun[]) => [...nouns, ...arr]);
-  };
+  /* --------------------------------- states --------------------------------- */
+  const [page, setPage] = useState(0);
 
   // Range calls
-  const initialChunkSize = 10;
-  const rangeChunkSize = 100;
-  const rangeCalls = async (nounCount: number, individualNouns: Noun[]) => {
-    if (nounCount >= 0) {
-      for (let i = nounCount - individualNouns.length; i >= 0; i -= rangeChunkSize) {
-        const start = i - rangeChunkSize < 0 ? 0 : i - rangeChunkSize;
-        const end = i - 1;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const nounsRange = await fetchNouns(start, end);
+  const pageSize = 50;
+
+  /* --------------------------------- effects -------------------------------- */
+  // set placeholder on initial load
+  useEffect(() => {
+    // placeholder nouns
+    const placeholderNounsData = new Array(pageSize).fill(placeholderNoun).map((x, i): Noun => {
+      return {
+        id: null,
+        imgSrc: undefined,
+      };
+    });
+    setNounsList(placeholderNounsData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // set nounsList on page change
+  useEffect(() => {
+    // check
+    if (nounsCount <= 0) {
+      return;
+    }
+
+    // set nouns for current page
+    const nouns: Noun[] = [];
+
+    // - descending
+    if (sortOrder === 'date-descending') {
+      const firstIDOnPage = nounsCount - page * pageSize;
+      for (let i = firstIDOnPage; i >= Math.max(firstIDOnPage - pageSize + 1, 1); i -= 1) {
+        nouns.push({
+          id: i,
+          imgSrc: undefined,
+        });
       }
     }
-  };
 
-  const fetchNouns = async (start: number, end: number) => {
-    const url = `https://noun.pics/range?start=${start}&end=${end}`;
-    try {
-      const response = await fetch(url);
-      const json = await response.json();
-      // Convert noun.pic svg key to generic imgSrc key
-      const rangeNouns: Noun[] = json.reverse().map((noun: NounPic, i: number) => {
-        return {
-          id: noun.id,
-          imgSrc: noun.svg,
-        };
-      });
-
-      props.setNounsList((arr: Noun[]) => {
-        let sliced = arr.slice(0, props.nounCount - 1 - end).concat(rangeNouns);
-        // if list is only individual nouns + placeholders
-        // keep individual nouns, clear others and replace with ranges
-        if (arr[individualNouns.length + 1].id === null) {
-          sliced = arr.slice(0, individualNouns.length).concat(rangeNouns);
-        }
-        return sliced;
-      });
-
-      return rangeNouns;
-    } catch (error) {
-      console.log('error fetching nouns', error);
-    }
-  };
-
-  // Once nounCount is known, run dependent functions
-  useEffect(() => {
-    const placeholderNounsData = new Array(rangeChunkSize)
-      .fill(placeholderNoun)
-      .map((x, i): Noun => {
-        return {
-          id: null,
+    // - ascending
+    else {
+      const firstIDOnPage = 1 + page * pageSize;
+      for (let i = firstIDOnPage; i <= Math.min(firstIDOnPage + pageSize - 1, nounsCount); i += 1) {
+        nouns.push({
+          id: i,
           imgSrc: undefined,
-        };
-      });
-    props.setNounsList(placeholderNounsData);
-
-    if (props.nounCount >= 0) {
-      getInitialNouns((props.nounCount % initialChunkSize) + 1);
+        });
+      }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.nounCount]);
+    setNounsList(nouns);
+  }, [nounsCount, page, setNounsList, sortOrder]);
 
+  /* -------------------------------- callbacks ------------------------------- */
+  const onPrevious = useCallback(() => {
+    setPage(p => {
+      if (p <= 0) {
+        return p;
+      }
+      return p - 1;
+    });
+  }, []);
+
+  const onNext = useCallback(() => {
+    setPage(p => {
+      if (p >= Math.ceil(nounsCount / pageSize) - 1) {
+        return p;
+      }
+      return p + 1;
+    });
+  }, [nounsCount]);
+
+  /* ---------------------------------- main ---------------------------------- */
   return (
     <div
       className={cx(
@@ -125,11 +115,8 @@ const ExploreGrid: React.FC<ExploreGridProps> = props => {
           classes.sidebarHidden,
       )}
     >
-      <ul>
-        {(props.sortOrder === 'date-ascending'
-          ? [...props.nounsList].reverse()
-          : props.nounsList
-        ).map((noun, i) => {
+      <ul style={{ marginBottom: '16px' }}>
+        {props.nounsList.map((noun, i) => {
           return (
             <li className={noun.id === props.selectedNoun ? classes.activeNoun : ''} key={i}>
               <button
@@ -153,6 +140,49 @@ const ExploreGrid: React.FC<ExploreGridProps> = props => {
           );
         })}
       </ul>
+
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          gap: '16px',
+          padding: '0px 12px',
+          marginBottom: '20px',
+        }}
+      >
+        <button
+          style={{
+            background: 'transparent',
+            padding: '4px 16px 4px 16px',
+            color: 'rgb(95, 95, 95)',
+            fontWeight: 'bold',
+            position: 'relative',
+            appearance: 'none',
+            borderRadius: '10px',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+          }}
+          onClick={onPrevious}
+        >
+          Previous
+        </button>
+        <div>Page {page + 1}</div>
+        <button
+          style={{
+            background: 'transparent',
+            padding: '4px 16px 4px 16px',
+            color: 'rgb(95, 95, 95)',
+            fontWeight: 'bold',
+            position: 'relative',
+            appearance: 'none',
+            borderRadius: '10px',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+          }}
+          onClick={onNext}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
