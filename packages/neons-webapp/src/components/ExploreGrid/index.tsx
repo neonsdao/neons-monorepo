@@ -64,6 +64,7 @@ const ExploreGrid: React.FC<ExploreGridProps> = props => {
     // - descending
     if (sortOrder === 'date-descending') {
       const firstIDOnPage = nounsCount - page * pageSize;
+      
       for (let i = firstIDOnPage; i >= Math.max(firstIDOnPage - pageSize + 1, 1); i -= 1) {
         nouns.push({
           id: i,
@@ -123,13 +124,6 @@ const ExploreGrid: React.FC<ExploreGridProps> = props => {
                 ref={el => (props.buttonsRef.current[noun.id ? noun.id : -1] = el)}
                 key={`${i}${noun.id}`}
                 onClick={e => noun.id !== null && props.handleFocusNoun(noun.id)}
-                onFocus={e => noun.id !== null && props.handleFocusNoun(noun.id)}
-                onMouseOver={() =>
-                  !props.isNounHoverDisabled && noun.id !== null && props.setActiveNoun(noun.id)
-                }
-                onMouseOut={() =>
-                  props.selectedNoun !== undefined && props.setActiveNoun(props.selectedNoun)
-                }
               >
                 <ExploreGridItem nounId={noun.id} imgSrc={noun.imgSrc} />
                 <p className={classes.nounIdOverlay}>

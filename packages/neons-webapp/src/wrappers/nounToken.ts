@@ -66,10 +66,10 @@ const seedArrayToObject = (seeds: (INounSeed & { id: string })[]) => {
   }, {});
 };
 
-const useNounSeeds = () => {
+const useNounSeeds = (nounId: number) => {
   const cache = localStorage.getItem(seedCacheKey);
   const cachedSeeds = cache ? JSON.parse(cache) : undefined;
-  const { data } = useQuery(seedsQuery(), {
+  const { data } = useQuery(seedsQuery(nounId), {
     skip: !!cachedSeeds,
   });
 
@@ -83,7 +83,7 @@ const useNounSeeds = () => {
 };
 
 export const useNounSeed = (nounId: EthersBN): INounSeed => {
-  const seeds = useNounSeeds();
+  const seeds = useNounSeeds(parseInt(nounId._hex));
   const seed = seeds?.[nounId.toString()];
   // prettier-ignore
   const request = seed ? false : {

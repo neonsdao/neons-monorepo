@@ -41,9 +41,9 @@ export interface Delegates {
   delegates: Delegate[];
 }
 
-export const seedsQuery = (first = 1_000) => gql`
+export const seedsQuery = (count: number) => gql`
 {
-  seeds(first: ${first}) {
+  seeds(first: ${count}) {
     id
     background
     body
