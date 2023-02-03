@@ -87,14 +87,13 @@ export type AppDispatch = typeof store.dispatch;
 const supportedChainURLs = {
   [CANTO_CHAIN_ID]: CANTO_NETWORK_HTTPS_URL,
   [ChainId.Goerli]: createNetworkHttpUrl('goerli'),
-  [ChainId.Mainnet]: createNetworkHttpUrl('ethereum'),
 };
 
 // prettier-ignore
 const useDappConfig = {
   readOnlyChainId: CHAIN_ID,
   readOnlyUrls: {
-    [ChainId.Mainnet]: createNetworkHttpUrl('ethereum'),
+    [ChainId.Mainnet]: createNetworkHttpUrl('mainnet'),
     [CHAIN_ID]: supportedChainURLs[CHAIN_ID],
   },
   multicallAddresses: {
@@ -210,7 +209,8 @@ const ChainSubscriber: React.FC = () => {
  * why not just fetch 1 item
  */
 const PastAuctions: React.FC = () => {
-  const onDisplayAuctionNounId = useAppSelector(state => state.onDisplayAuction.onDisplayAuctionNounId) ?? 0;
+  const onDisplayAuctionNounId =
+    useAppSelector(state => state.onDisplayAuction.onDisplayAuctionNounId) ?? 0;
   const { data } = useQuery(auctionQuery(onDisplayAuctionNounId));
   const dispatch = useAppDispatch();
 
