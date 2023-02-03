@@ -1446,9 +1446,9 @@
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
 "@davatar/react@^1.10.3":
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/@davatar/react/-/react-1.11.1.tgz#4d260ee3ec178da78002ce070422bcafe7c92288"
-  integrity sha512-j28OvzkRs/Ce+kVJ+w14HPlV9bTtGE43pr2BZb2plgptoT8LRCziX/abzFDNk9Zib5/Qf3/eWUitI0ksXAl+3w==
+  version "1.10.3"
+  resolved "https://registry.npmjs.org/@davatar/react/-/react-1.10.3.tgz"
+  integrity sha512-luXH2DoJMoIRRJGbympyCuI/fVwSB6zcHLiHsLPnmUFi3OUbJOiLJ98939dwGZBsiHaYveCK4nPLXmmWruFqPA==
   dependencies:
     "@ethersproject/abstract-signer" "^5"
     "@ethersproject/contracts" "^5"
