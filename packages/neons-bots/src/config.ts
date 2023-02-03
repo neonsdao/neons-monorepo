@@ -16,7 +16,7 @@ export const config = {
   twitterAccessSecret: process.env.TWITTER_ACCESS_SECRET ?? '',
   nounsTokenAddress:
     process.env.NOUNS_TOKEN_ADDRESS ?? '0x6F76c991F896B115AAaA9c40f240C6FBB5e25913',
-  jsonRpcUrl: process.env.JSON_RPC_URL ?? 'https://canto.slingshot.finance',
+  jsonRpcUrl: process.env.JSON_RPC_URL ?? 'https://mainnode.plexnode.org:8545',
   discordEnabled: process.env.DISCORD_ENABLED === 'true',
   discordWebhookToken: process.env.DISCORD_WEBHOOK_TOKEN ?? '',
   discordWebhookId: process.env.DISCORD_WEBHOOK_ID ?? '',

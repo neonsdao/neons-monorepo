@@ -1,4 +1,3 @@
-import Davatar from '@davatar/react';
 import { useEthers } from '@usedapp/core';
 import React, { useState } from 'react';
 import { useReverseENSLookUp } from '../../utils/ensLookup';
@@ -17,10 +16,8 @@ import { usePickByState } from '../../utils/colorResponsiveUIUtils';
 import WalletConnectButton from './WalletConnectButton';
 import { Trans } from '@lingui/macro';
 import {
-  shortENS,
   useShortAddress,
   veryShortAddress,
-  veryShortENS,
 } from '../../utils/addressAndENSDisplayUtils';
 import { useActiveLocale } from '../../hooks/useActivateLocale';
 import responsiveUiUtilsClasses from '../../utils/ResponsiveUIUtils.module.css';
@@ -50,7 +47,6 @@ const NavWallet: React.FC<NavWalletProps> = props => {
   const [buttonUp, setButtonUp] = useState(false);
   const [showConnectModal, setShowConnectModal] = useState(false);
   const history = useHistory();
-  const { library: provider } = useEthers();
   const activeAccount = useAppSelector(state => state.account.activeAccount);
   const { deactivate } = useEthers();
   const ens = useReverseENSLookUp(address);
@@ -123,10 +119,6 @@ const NavWallet: React.FC<NavWalletProps> = props => {
         }}
       >
         <div className={navDropdownClasses.button}>
-          <div className={classes.icon}>
-            {' '}
-            <Davatar size={21} address={address} provider={provider} />
-          </div>
           <div className={navDropdownClasses.dropdownBtnContent}>{ens ? ens : shortAddress}</div>
           <div className={buttonUp ? navDropdownClasses.arrowUp : navDropdownClasses.arrowDown}>
             <FontAwesomeIcon icon={buttonUp ? faSortUp : faSortDown} />{' '}
@@ -183,13 +175,6 @@ const NavWallet: React.FC<NavWalletProps> = props => {
     );
   });
 
-  const renderENS = (ens: string) => {
-    if (activeLocale === 'ja-JP') {
-      return veryShortENS(ens);
-    }
-    return shortENS(ens);
-  };
-
   const renderAddress = (address: string) => {
     if (activeLocale === 'ja-JP') {
       return veryShortAddress(address);
@@ -210,10 +195,9 @@ const NavWallet: React.FC<NavWalletProps> = props => {
             <div className={navDropdownClasses.button}>
               <div className={classes.icon}>
                 {' '}
-                <Davatar size={21} address={address} provider={provider} />
               </div>
               <div className={navDropdownClasses.dropdownBtnContent}>
-                {ens ? renderENS(ens) : renderAddress(address)}
+                {renderAddress(address)}
               </div>
             </div>
           </div>

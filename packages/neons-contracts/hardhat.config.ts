@@ -41,7 +41,7 @@ const config: HardhatUserConfig = {
       gas: 10000000,
     },
     canto: {
-      url: `https://canto.slingshot.finance`,
+      url: `https://mainnode.plexnode.org:8545/`,
       accounts: process.env.MNEMONIC
         ? { mnemonic: process.env.MNEMONIC }
         : [process.env.CANTO_PRIVATE_KEY!].filter(Boolean),
