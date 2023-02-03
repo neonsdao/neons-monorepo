@@ -25,16 +25,14 @@ type Noun = {
 
 const placeholderNoun: Noun = { id: null, imgSrc: undefined };
 
-
 const ExploreGrid: React.FC<ExploreGridProps> = props => {
-
   /* ---------------------------------- props --------------------------------- */
-  const nounsCount = props.nounCount
-  const setNounsList = props.setNounsList
-  const sortOrder = props.sortOrder
+  const nounsCount = props.nounCount;
+  const setNounsList = props.setNounsList;
+  const sortOrder = props.sortOrder;
 
   /* --------------------------------- states --------------------------------- */
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(0);
 
   // Range calls
   const pageSize = 50;
@@ -43,14 +41,12 @@ const ExploreGrid: React.FC<ExploreGridProps> = props => {
   // set placeholder on initial load
   useEffect(() => {
     // placeholder nouns
-    const placeholderNounsData = new Array(pageSize)
-      .fill(placeholderNoun)
-      .map((x, i): Noun => {
-        return {
-          id: null,
-          imgSrc: undefined,
-        };
-      });
+    const placeholderNounsData = new Array(pageSize).fill(placeholderNoun).map((x, i): Noun => {
+      return {
+        id: null,
+        imgSrc: undefined,
+      };
+    });
     setNounsList(placeholderNounsData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -58,49 +54,55 @@ const ExploreGrid: React.FC<ExploreGridProps> = props => {
   // set nounsList on page change
   useEffect(() => {
     // check
-    if (nounsCount <= 0) { return }
+    if (nounsCount <= 0) {
+      return;
+    }
 
     // set nouns for current page
-    const nouns: Noun[] = []
+    const nouns: Noun[] = [];
 
     // - descending
-    if (sortOrder === "date-descending") {
-      const firstIDOnPage = (nounsCount - page * pageSize)
+    if (sortOrder === 'date-descending') {
+      const firstIDOnPage = nounsCount - page * pageSize;
       for (let i = firstIDOnPage; i >= Math.max(firstIDOnPage - pageSize + 1, 1); i -= 1) {
         nouns.push({
           id: i,
           imgSrc: undefined,
-        })
+        });
       }
-    } 
-    
+    }
+
     // - ascending
     else {
-      const firstIDOnPage = (1 + page * pageSize)
+      const firstIDOnPage = 1 + page * pageSize;
       for (let i = firstIDOnPage; i <= Math.min(firstIDOnPage + pageSize - 1, nounsCount); i += 1) {
         nouns.push({
           id: i,
           imgSrc: undefined,
-        })
+        });
       }
     }
-    setNounsList(nouns)
-  }, [nounsCount, page, setNounsList, sortOrder])
+    setNounsList(nouns);
+  }, [nounsCount, page, setNounsList, sortOrder]);
 
   /* -------------------------------- callbacks ------------------------------- */
   const onPrevious = useCallback(() => {
     setPage(p => {
-      if (p <= 0) { return p }
-      return p - 1
-    })
-  }, [])
+      if (p <= 0) {
+        return p;
+      }
+      return p - 1;
+    });
+  }, []);
 
   const onNext = useCallback(() => {
     setPage(p => {
-      if (p >= Math.ceil(nounsCount / pageSize) - 1) { return p }
-      return p + 1
-    })
-  }, [nounsCount])
+      if (p >= Math.ceil(nounsCount / pageSize) - 1) {
+        return p;
+      }
+      return p + 1;
+    });
+  }, [nounsCount]);
 
   /* ---------------------------------- main ---------------------------------- */
   return (
@@ -113,8 +115,8 @@ const ExploreGrid: React.FC<ExploreGridProps> = props => {
           classes.sidebarHidden,
       )}
     >
-      <ul style={{marginBottom: "16px"}}>
-        {(props.nounsList).map((noun, i) => {
+      <ul style={{ marginBottom: '16px' }}>
+        {props.nounsList.map((noun, i) => {
           return (
             <li className={noun.id === props.selectedNoun ? classes.activeNoun : ''} key={i}>
               <button
@@ -139,32 +141,43 @@ const ExploreGrid: React.FC<ExploreGridProps> = props => {
         })}
       </ul>
 
-      <div style={{display: 'flex', justifyContent: "flex-end", alignItems: "center", gap: "16px", padding: "0px 12px", marginBottom: "20px"}}>
-        <button style={{
-            background: "transparent", 
-            padding: "4px 16px 4px 16px",
-            color: "rgb(95, 95, 95)",
-            fontWeight: "bold",
-            position: "relative",
-            appearance: "none",
-            borderRadius: "10px",
-            border: "1px solid rgba(0, 0, 0, 0.1)"
-          }} 
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          gap: '16px',
+          padding: '0px 12px',
+          marginBottom: '20px',
+        }}
+      >
+        <button
+          style={{
+            background: 'transparent',
+            padding: '4px 16px 4px 16px',
+            color: 'rgb(95, 95, 95)',
+            fontWeight: 'bold',
+            position: 'relative',
+            appearance: 'none',
+            borderRadius: '10px',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+          }}
           onClick={onPrevious}
         >
           Previous
         </button>
         <div>Page {page + 1}</div>
-        <button style={{
-          background: "transparent", 
-          padding: "4px 16px 4px 16px",
-          color: "rgb(95, 95, 95)",
-          fontWeight: "bold",
-          position: "relative",
-          appearance: "none",
-          borderRadius: "10px",
-          border: "1px solid rgba(0, 0, 0, 0.1)"
-        }}
+        <button
+          style={{
+            background: 'transparent',
+            padding: '4px 16px 4px 16px',
+            color: 'rgb(95, 95, 95)',
+            fontWeight: 'bold',
+            position: 'relative',
+            appearance: 'none',
+            borderRadius: '10px',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+          }}
           onClick={onNext}
         >
           Next

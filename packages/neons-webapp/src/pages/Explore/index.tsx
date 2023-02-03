@@ -218,7 +218,7 @@ const ExplorePage: React.FC<ExplorePageProps> = props => {
             <ExploreNounDetail
               handleCloseDetail={() => handleCloseDetail()}
               handleNounNavigation={handleNounNavigation}
-              noun={{id: activeNoun, imgSrc: undefined}}
+              noun={{ id: activeNoun, imgSrc: undefined }}
               nounId={activeNoun}
               nounCount={nounCount}
               selectedNoun={selectedNoun}
