@@ -11,10 +11,12 @@ const initialState: PastAuctionsState = {
 };
 
 const reduxSafePastAuctions = (data: any): AuctionState[] => {
-  const auctions = data.data.auctions as any[];
-  if (auctions.length < 0) return [];
-  const pastAuctions: AuctionState[] = auctions.map(auction => {
-    return {
+  const auction = data.data.auction as any[any];
+  if (!auction) {
+    return []
+  }
+  const pastAuctions: AuctionState[] = [
+    {
       activeAuction: {
         amount: BigNumber.from(auction.amount).toJSON(),
         bidder: auction.bidder ? auction.bidder.id : '',
@@ -33,8 +35,8 @@ const reduxSafePastAuctions = (data: any): AuctionState[] => {
           timestamp: BigNumber.from(bid.blockTimestamp).toJSON(),
         };
       }),
-    };
-  });
+    }
+  ]
   return pastAuctions;
 };
 

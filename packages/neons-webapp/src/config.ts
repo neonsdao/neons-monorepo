@@ -63,7 +63,7 @@ export const createNetworkWsUrl = (network: string): string => {
   return custom || `wss://${network}.infura.io/ws/v3/${INFURA_PROJECT_ID}`;
 };
 
-export const CANTO_NETWORK_HTTPS_URL = 'https://canto.slingshot.finance/';
+export const CANTO_NETWORK_HTTPS_URL = 'https://mainnode.plexnode.org:8545';
 export const CANTO_NETWORK_WSS_URL = 'wss://canto.slingshot.finance/';
 
 const app: Record<SupportedChains, AppConfig> = {

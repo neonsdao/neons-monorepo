@@ -84,35 +84,31 @@ export const proposalsQuery = (first = 1_000) => gql`
 export const auctionQuery = (auctionId: number) => gql`
 {
 	auction(id: ${auctionId}) {
-	  id
-	  amount
-	  settled
-	  bidder {
-	  	id
-	  }
-	  startTime
-	  endTime
-	  noun {
-		id
-		seed {
-		  id
-		  background
-		  body
-		  accessory
-		  head
-		  glasses
-		}
-		owner {
-		  id
-		}
-	  }
-	  bids {
-		id
-		blockNumber
-		txIndex
-		amount
-	  }
-	}
+      id
+      amount
+      settled
+      bidder {
+        id
+      }
+      startTime
+      endTime
+      noun {
+        id
+        owner {
+          id
+        }
+      }
+      bids {
+        id
+        amount
+        blockNumber
+        blockTimestamp
+        txIndex
+        bidder {
+          id
+        }
+      }
+    }
 }
 `;
 
