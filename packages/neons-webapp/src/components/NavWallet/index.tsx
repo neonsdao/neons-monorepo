@@ -1,4 +1,5 @@
-import { useEthers } from '@usedapp/core';
+import Davatar from '@davatar/react';
+import { ChainId, useEthers } from '@usedapp/core';
 import React, { useState } from 'react';
 import { useReverseENSLookUp } from '../../utils/ensLookup';
 import { getNavBarButtonVariant, NavBarButtonStyle } from '../NavBarButton';
@@ -15,12 +16,10 @@ import { useHistory } from 'react-router-dom';
 import { usePickByState } from '../../utils/colorResponsiveUIUtils';
 import WalletConnectButton from './WalletConnectButton';
 import { Trans } from '@lingui/macro';
-import {
-  useShortAddress,
-  veryShortAddress,
-} from '../../utils/addressAndENSDisplayUtils';
+import { useShortAddress, veryShortAddress } from '../../utils/addressAndENSDisplayUtils';
 import { useActiveLocale } from '../../hooks/useActivateLocale';
 import responsiveUiUtilsClasses from '../../utils/ResponsiveUIUtils.module.css';
+import { useReadonlyProvider } from '../../hooks/useReadonlyProvider';
 
 interface NavWalletProps {
   address: string;
@@ -52,6 +51,7 @@ const NavWallet: React.FC<NavWalletProps> = props => {
   const ens = useReverseENSLookUp(address);
   const shortAddress = useShortAddress(address);
   const activeLocale = useActiveLocale();
+  const mainnetProvider = useReadonlyProvider(ChainId.Mainnet);
 
   const setModalStateHandler = (state: boolean) => {
     setShowConnectModal(state);
@@ -119,6 +119,10 @@ const NavWallet: React.FC<NavWalletProps> = props => {
         }}
       >
         <div className={navDropdownClasses.button}>
+          <div className={classes.icon}>
+            {' '}
+            <Davatar size={21} address={address} provider={mainnetProvider} />
+          </div>
           <div className={navDropdownClasses.dropdownBtnContent}>{ens ? ens : shortAddress}</div>
           <div className={buttonUp ? navDropdownClasses.arrowUp : navDropdownClasses.arrowDown}>
             <FontAwesomeIcon icon={buttonUp ? faSortUp : faSortDown} />{' '}
@@ -195,10 +199,9 @@ const NavWallet: React.FC<NavWalletProps> = props => {
             <div className={navDropdownClasses.button}>
               <div className={classes.icon}>
                 {' '}
+                <Davatar size={21} address={address} provider={mainnetProvider} />
               </div>
-              <div className={navDropdownClasses.dropdownBtnContent}>
-                {renderAddress(address)}
-              </div>
+              <div className={navDropdownClasses.dropdownBtnContent}>{renderAddress(address)}</div>
             </div>
           </div>
         </div>
