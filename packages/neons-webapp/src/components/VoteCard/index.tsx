@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { Proposal } from '../../wrappers/nounsDao';
 import NounImageVoteTable from '../NounImageVoteTable';
@@ -7,12 +7,9 @@ import classes from './VoteCard.module.css';
 import { Trans } from '@lingui/macro';
 import { i18n } from '@lingui/core';
 import DelegateGroupedNounImageVoteTable from '../DelegateGroupedNounImageVoteTable';
-import { useEthers } from '@usedapp/core';
 import responsiveUiUtilsClasses from '../../utils/ResponsiveUIUtils.module.css';
 import clsx from 'clsx';
-import { ensCacheKey } from '../../utils/ensLookup';
 import { useActiveLocale } from '../../hooks/useActivateLocale';
-import { lookupNNSOrENS } from '../../utils/lookupNNSOrENS';
 
 export enum VoteCardVariant {
   FOR,
@@ -59,44 +56,10 @@ const VoteCard: React.FC<VoteCardProps> = props => {
       break;
   }
 
-  const { library } = useEthers();
-  const [ensCached, setEnsCached] = useState(false);
   const locale = useActiveLocale();
   const filteredDelegateGroupedVoteData =
     delegateGroupedVoteData?.filter(v => v.supportDetailed === supportDetailedValue) ?? [];
   const isEnUS = locale === 'en-US';
-
-  // Pre-fetch ENS  of delegates (with 30min TTL)
-  // This makes hover cards load more smoothly
-  useEffect(() => {
-    if (!delegateGroupedVoteData || !library || ensCached) {
-      return;
-    }
-
-    delegateGroupedVoteData.forEach((delegateInfo: { delegate: string }) => {
-      if (localStorage.getItem(ensCacheKey(delegateInfo.delegate))) {
-        return;
-      }
-
-      lookupNNSOrENS(library, delegateInfo.delegate)
-        .then(name => {
-          // Store data as mapping of address_Expiration => address or ENS
-          if (name) {
-            localStorage.setItem(
-              ensCacheKey(delegateInfo.delegate),
-              JSON.stringify({
-                name,
-                expires: Date.now() / 1000 + 30 * 60,
-              }),
-            );
-          }
-        })
-        .catch(error => {
-          console.log(`error resolving reverse ens lookup: `, error);
-        });
-    });
-    setEnsCached(true);
-  }, [library, ensCached, delegateGroupedVoteData]);
 
   return (
     <Col lg={4} className={classes.wrapper}>

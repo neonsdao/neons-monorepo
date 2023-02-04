@@ -50,12 +50,11 @@ const ChangeDelegatePannel: React.FC<ChangeDelegatePannelProps> = props => {
     ChangeDelegateState.ENTER_DELEGATE_ADDRESS,
   );
 
-  const { library, account } = useEthers();
+  const { account } = useEthers();
 
   const [delegateAddress, setDelegateAddress] = useState(delegateTo ?? '');
   const [delegateInputText, setDelegateInputText] = useState(delegateTo ?? '');
   const [delegateInputClass, setDelegateInputClass] = useState<string>('');
-  const [hasResolvedDeepLinkedENS, setHasResolvedDeepLinkedENS] = useState(false);
   const availableVotes = useNounTokenBalance(account ?? '') ?? 0;
   const { send: delegateVotes, state: delegateState } = useDelegateVotes();
   const locale = useActiveLocale();
@@ -76,17 +75,6 @@ const ChangeDelegatePannel: React.FC<ChangeDelegatePannelProps> = props => {
   }, [delegateState]);
 
   useEffect(() => {
-    const checkIsValidENS = async () => {
-      const reverseENSResult = await library?.resolveName(delegateAddress);
-      if (reverseENSResult) {
-        setDelegateAddress(reverseENSResult);
-      }
-      setHasResolvedDeepLinkedENS(true);
-    };
-    checkIsValidENS();
-  }, [delegateAddress, delegateTo, library]);
-
-  useEffect(() => {
     if (delegateAddress.length === 0) {
       setDelegateInputClass(classes.empty);
     } else {
@@ -96,7 +84,7 @@ const ChangeDelegatePannel: React.FC<ChangeDelegatePannelProps> = props => {
         setDelegateInputClass(classes.invalid);
       }
     }
-  }, [delegateAddress, delegateTo, hasResolvedDeepLinkedENS]);
+  }, [delegateAddress, delegateTo]);
 
   const etherscanTxLink = buildEtherscanTxLink(delegateState.transaction?.hash ?? '');
 
@@ -170,7 +158,7 @@ const ChangeDelegatePannel: React.FC<ChangeDelegatePannelProps> = props => {
     // eslint-disable-next-line no-sparse-arrays
     [
       <Trans>
-        Enter the Ethereum address or ENS name of the account you would like to delegate your votes
+        Enter the Canto address of the account you would like to delegate your votes
         to.
       </Trans>,
       <Trans>
@@ -208,7 +196,7 @@ const ChangeDelegatePannel: React.FC<ChangeDelegatePannelProps> = props => {
             setDelegateInputText(e.target.value);
           }}
           value={delegateInputText}
-          placeholder={locale === 'en-US' ? '0x... or ...eth' : '0x... / ...eth'}
+          placeholder={'0x...'}
         />
       )}
 

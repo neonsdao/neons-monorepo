@@ -201,7 +201,7 @@ const Documentation = () => {
             <Accordion.Body>
               <p>
                 <Trans>
-                  Neons are generated randomly based Ethereum block hashes. There are no 'if'
+                  Neons are generated randomly based Canto block hashes. There are no 'if'
                   statements or other rules governing Neon trait scarcity, which makes all Neons
                   equally rare. As of this writing, Neons are made up of:
                 </Trans>

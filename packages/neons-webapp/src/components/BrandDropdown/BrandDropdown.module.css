@@ -1,7 +1,7 @@
 .chevron {
   height: 1.75rem;
   width: 1.75rem;
-  color: var(--brand-cool-dark-text);
+  color: var(--brand-gray-dark-text);
 }
 
 .chevronWrapper {
@@ -22,7 +22,7 @@
   font-weight: bold;
   padding: 0.5rem 1rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  color: var(--brand-cool-dark-text);
+  color: var(--brand-gray-dark-text);
 }
 
 .dropdownContainer select {

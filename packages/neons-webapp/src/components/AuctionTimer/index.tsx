@@ -8,6 +8,7 @@ import { useAppSelector } from '../../hooks';
 import clsx from 'clsx';
 import { Trans } from '@lingui/macro';
 import { i18n } from '@lingui/core';
+import { isMobileScreen } from '../../utils/isMobile';
 
 dayjs.extend(duration);
 
@@ -69,6 +70,7 @@ const AuctionTimer: React.FC<{
     >
       <Col xs={timerToggle ? 4 : 6} lg={12} className={classes.leftCol}>
         <h4
+        
           style={{
             color: isCool ? 'var(--brand-cool-light-text)' : 'var(--brand-warm-light-text)',
           }}
@@ -92,7 +94,7 @@ const AuctionTimer: React.FC<{
           <h2
             className={clsx(classes.timerWrapper, classes.timeLeft)}
             style={{
-              color: isCool ? 'var(--brand-cool-dark-text)' : 'var(--brand-warm-dark-text)',
+              color: isMobileScreen() ? 'var(--brand-gray-light-text)' : isCool ? 'var(--brand-cool-dark-text)' : 'var(--brand-warm-dark-text)',
             }}
           >
             <div className={classes.timerSection}>
