@@ -11,7 +11,7 @@ import ModalTitle from '../../../ModalTitle';
 import config from '../../../../config';
 
 const handleActionAdd = (state: ProposalActionModalState, onActionAdd: (e?: any) => void) => {
-  if (state.TransferFundsCurrency === SupportedCurrency.ETH) {
+  if (state.TransferFundsCurrency === SupportedCurrency.Canto) {
     onActionAdd({
       address: state.address,
       value: state.amount ? utils.parseEther(state.amount.toString()).toString() : '0',

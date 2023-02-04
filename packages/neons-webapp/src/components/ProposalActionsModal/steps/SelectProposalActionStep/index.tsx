@@ -28,7 +28,7 @@ const SelectProposalActionStep: React.FC<ProposalActionModalStepProps> = props =
         <Trans>
           <b>Supported Action Types:</b>
           <hr />
-          <b>• Transfer Funds: </b>Send a fixed amount of ETH or USDC.
+          <b>• Transfer Funds: </b>Send a fixed amount of Canto or USDC.
           <br />
           <b>• Function Call: </b>Call a contract function.
         </Trans>

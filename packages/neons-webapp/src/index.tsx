@@ -25,6 +25,7 @@ import { ApolloProvider, useQuery } from '@apollo/client';
 import { auctionQuery, clientFactory } from './wrappers/subgraph';
 import { useEffect } from 'react';
 import pastAuctions, { addPastAuctions } from './state/slices/pastAuctions';
+import LogsUpdater from './state/updaters/logs';
 import config, {
   CANTO_CHAIN_ID,
   CANTO_NETWORK_HTTPS_URL,
@@ -103,6 +104,14 @@ const useDappConfig = {
 };
 
 const client = clientFactory(config.app.subgraphApiUri);
+
+const Updaters = () => {
+  return (
+    <>
+      <LogsUpdater />
+    </>
+  );
+};
 
 const LAST_AUCTION_BLOCK = 100;
 
@@ -237,6 +246,7 @@ ReactDOM.render(
               <LanguageProvider>
                 <App />
               </LanguageProvider>
+              <Updaters />
             </DAppProvider>
           </ApolloProvider>
         </Web3ReactProvider>

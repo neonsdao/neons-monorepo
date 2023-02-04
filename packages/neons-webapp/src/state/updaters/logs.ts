@@ -5,7 +5,8 @@ import { useReadonlyProvider } from '../../hooks/useReadonlyProvider';
 import { EventFilter, keyToFilter } from '../../utils/logParsing';
 import { fetchedLogs, fetchedLogsError, fetchingLogs } from '../slices/logs';
 
-const MAX_BLOCKS_PER_CALL = 1_000_000;
+// Config Depend on Node provider
+const MAX_BLOCKS_PER_CALL = 10_000;
 
 const Updater = (): null => {
   const dispatch = useAppDispatch();
