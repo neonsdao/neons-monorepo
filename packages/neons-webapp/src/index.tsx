@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { ChainId, DAppProvider, useEthers } from '@usedapp/core';
 import { Web3ReactProvider } from '@web3-react/core';
 import { Web3Provider } from '@ethersproject/providers';
@@ -23,10 +22,9 @@ import onDisplayAuction, {
   setOnDisplayAuctionNounId,
 } from './state/slices/onDisplayAuction';
 import { ApolloProvider, useQuery } from '@apollo/client';
-import { clientFactory, latestAuctionsQuery } from './wrappers/subgraph';
+import { auctionQuery, clientFactory } from './wrappers/subgraph';
 import { useEffect } from 'react';
 import pastAuctions, { addPastAuctions } from './state/slices/pastAuctions';
-import LogsUpdater from './state/updaters/logs';
 import config, {
   CANTO_CHAIN_ID,
   CANTO_NETWORK_HTTPS_URL,
@@ -106,15 +104,7 @@ const useDappConfig = {
 
 const client = clientFactory(config.app.subgraphApiUri);
 
-const Updaters = () => {
-  return (
-    <>
-      <LogsUpdater />
-    </>
-  );
-};
-
-const BLOCKS_PER_DAY = 7_200;
+const LAST_AUCTION_BLOCK = 100;
 
 const ChainSubscriber: React.FC = () => {
   const { library, activateBrowserWallet } = useEthers();
@@ -187,7 +177,7 @@ const ChainSubscriber: React.FC = () => {
       // Fetch the previous 24 hours of bids
       const previousBids = await nounsAuctionHouseContract.queryFilter(
         bidFilter,
-        0 - BLOCKS_PER_DAY,
+        0 - LAST_AUCTION_BLOCK,
       );
       for (let event of previousBids) {
         if (event.args === undefined) return;
@@ -214,14 +204,19 @@ const ChainSubscriber: React.FC = () => {
   return <></>;
 };
 
+/**
+ * I can't understand why fetch last 1000 items then find by id
+ * why not just fetch 1 item
+ */
 const PastAuctions: React.FC = () => {
-  const latestAuctionId = useAppSelector(state => state.onDisplayAuction.lastAuctionNounId);
-  const { data } = useQuery(latestAuctionsQuery());
+  const onDisplayAuctionNounId =
+    useAppSelector(state => state.onDisplayAuction.onDisplayAuctionNounId) ?? 0;
+  const { data } = useQuery(auctionQuery(onDisplayAuctionNounId));
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     data && dispatch(addPastAuctions({ data }));
-  }, [data, latestAuctionId, dispatch]);
+  }, [data, onDisplayAuctionNounId, dispatch]);
 
   return <></>;
 };
@@ -242,7 +237,6 @@ ReactDOM.render(
               <LanguageProvider>
                 <App />
               </LanguageProvider>
-              <Updaters />
             </DAppProvider>
           </ApolloProvider>
         </Web3ReactProvider>
@@ -255,4 +249,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();

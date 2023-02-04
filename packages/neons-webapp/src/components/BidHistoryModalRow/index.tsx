@@ -10,11 +10,10 @@ import clsx from 'clsx';
 import auctionActivityClasses from '../AuctionActivity/BidHistory.module.css';
 import _trophy from '../../assets/icons/trophy.svg';
 import Davatar from '@davatar/react';
-import { useEthers } from '@usedapp/core';
-import { useReverseENSLookUp } from '../../utils/ensLookup';
-import { containsBlockedText } from '../../utils/moderation/containsBlockedText';
+import { ChainId } from '@usedapp/core';
 import { i18n } from '@lingui/core';
-import { shortENS, useShortAddress } from '../../utils/addressAndENSDisplayUtils';
+import { useShortAddress } from '../../utils/addressAndENSDisplayUtils';
+import { useReadonlyProvider } from '../../hooks/useReadonlyProvider';
 interface BidHistoryModalRowProps {
   bid: Bid;
   index: number;
@@ -23,13 +22,9 @@ interface BidHistoryModalRowProps {
 const BidHistoryModalRow: React.FC<BidHistoryModalRowProps> = props => {
   const { bid, index } = props;
   const txLink = buildEtherscanTxLink(bid.transactionHash);
-  const { library: provider } = useEthers();
-
   const bidAmount = <TruncatedAmount amount={new BigNumber(EthersBN.from(bid.value).toString())} />;
-
-  const ens = useReverseENSLookUp(bid.sender);
-  const ensMatchesBlocklistRegex = containsBlockedText(ens || '', 'en');
   const shortAddress = useShortAddress(bid.sender);
+  const mainnetProvider = useReadonlyProvider(ChainId.Mainnet);
 
   return (
     <li className={clsx(auctionActivityClasses.bidRowCool, classes.bidRow)}>
@@ -37,10 +32,10 @@ const BidHistoryModalRow: React.FC<BidHistoryModalRowProps> = props => {
         <div className={auctionActivityClasses.leftSectionWrapper}>
           <div className={auctionActivityClasses.bidder}>
             <div className={classes.bidderInfoWrapper}>
-              <Davatar size={40} address={bid.sender} provider={provider} />
+              <Davatar size={40} address={bid.sender} provider={mainnetProvider} />
               <div className={classes.bidderInfoText}>
                 <span>
-                  {ens && !ensMatchesBlocklistRegex ? shortENS(ens) : shortAddress}
+                  {shortAddress}
                   {index === 0 && (
                     <img
                       src={_trophy}
