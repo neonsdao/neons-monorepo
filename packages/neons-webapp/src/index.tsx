@@ -163,7 +163,7 @@ const ChainSubscriber: React.FC = () => {
           setActiveAuction(reduxSafeNewAuction({ nounId, startTime, endTime, settled: false })),
         );
         const nounIdNumber = BigNumber.from(nounId).toNumber();
-        dispatch(push(nounPath(nounIdNumber)));
+        // dispatch(push(nounPath(nounIdNumber)));
         dispatch(setOnDisplayAuctionNounId(nounIdNumber));
         dispatch(setLastAuctionNounId(nounIdNumber));
       };
