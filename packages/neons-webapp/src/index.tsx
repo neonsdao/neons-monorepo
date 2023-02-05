@@ -19,7 +19,6 @@ import auction, {
 } from './state/slices/auction';
 import onDisplayAuction, {
   setLastAuctionNounId,
-  setOnDisplayAuctionNounId,
 } from './state/slices/onDisplayAuction';
 import { ApolloProvider, useQuery } from '@apollo/client';
 import { auctionQuery, clientFactory } from './wrappers/subgraph';
@@ -161,7 +160,6 @@ const ChainSubscriber: React.FC = () => {
           setActiveAuction(reduxSafeNewAuction({ nounId, startTime, endTime, settled: false })),
         );
         const nounIdNumber = BigNumber.from(nounId).toNumber();
-        dispatch(setOnDisplayAuctionNounId(nounIdNumber));
         dispatch(setLastAuctionNounId(nounIdNumber));
       };
       const processAuctionExtended = (nounId: BigNumberish, endTime: BigNumberish) => {
