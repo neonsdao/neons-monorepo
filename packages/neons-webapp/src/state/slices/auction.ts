@@ -13,13 +13,6 @@ export interface AuctionState {
   bids: BidEvent[];
 }
 
-export interface AuctionStateMap {
-  [nounId: number] : {
-    activeAuction?: IAuction;
-    bids: BidEvent[];
-  }
-}
-
 const initialState: AuctionState = {
   activeAuction: undefined,
   bids: [],

@@ -50,7 +50,7 @@ const GovernancePage = () => {
               </span>
             </Row>
             <Row>
-              <Col className={clsx(classes.ethTreasuryAmt)} lg={3}>
+              <Col className={clsx(classes.ethTreasuryAmt)} lg={4}>
                 <h1 className={classes.ethSymbol}>
                   <Canto style={{ paddingBottom: 6 }} />
                 </h1>

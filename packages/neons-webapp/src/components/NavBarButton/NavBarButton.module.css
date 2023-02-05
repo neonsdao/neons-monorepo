@@ -150,17 +150,17 @@
 .delegateBack {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  color: var(--brand-cool-dark-text);
+  color: var(--brand-gray-dark-text);
   width: 100px;
 }
 
 .delegateBack:hover {
   background-color: #e2e3e8;
-  color: var(--brand-cool-dark-text);
+  color: var(--brand-gray-dark-text);
 }
 
 .delegatePrimary {
-  background-color: var(--brand-cool-dark-text);
+  background-color: var(--brand-gray-dark-text);
   color: white;
   width: 315px;
 }

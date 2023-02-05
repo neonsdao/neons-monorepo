@@ -10,7 +10,7 @@ import ShortAddress from '../../../ShortAddress';
 import classes from './FunctionCallReviewStep.module.css';
 
 export enum SupportedCurrencies {
-  ETH = 'ETH',
+  Canto = 'Canto',
   USDC = 'USDC',
 }
 
@@ -60,7 +60,7 @@ const FunctionCallReviewStep: React.FC<FinalProposalActionStepProps> = props => 
             <span className={classes.label}>
               <Trans>Value</Trans>
             </span>
-            <div className={classes.value}>{value ? `${value} ETH` : <Trans>None</Trans>}</div>
+            <div className={classes.value}>{value ? `${value} Canto` : <Trans>None</Trans>}</div>
           </div>
         </div>
       ) : (

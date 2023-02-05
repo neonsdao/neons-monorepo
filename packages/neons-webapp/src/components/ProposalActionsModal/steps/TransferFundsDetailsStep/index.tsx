@@ -10,7 +10,7 @@ import ModalBottomButtonRow from '../../../ModalBottomButtonRow';
 import ModalTitle from '../../../ModalTitle';
 
 export enum SupportedCurrency {
-  ETH = 'ETH',
+  Canto = 'Canto',
   USDC = 'USDC',
 }
 
@@ -18,7 +18,7 @@ const TransferFundsDetailsStep: React.FC<ProposalActionModalStepProps> = props =
   const { onNextBtnClick, onPrevBtnClick, state, setState } = props;
 
   const [currency, setCurrency] = useState<SupportedCurrency>(
-    state.TransferFundsCurrency ?? SupportedCurrency.ETH,
+    state.TransferFundsCurrency ?? SupportedCurrency.Canto,
   );
   const [amount, setAmount] = useState<string>(state.amount ?? '');
   const [formattedAmount, setFormattedAmount] = useState<string>(state.amount ?? '');
@@ -39,17 +39,17 @@ const TransferFundsDetailsStep: React.FC<ProposalActionModalStepProps> = props =
 
       <BrandDropdown
         label={'Currency'}
-        value={currency === SupportedCurrency.ETH ? 'ETH' : 'USDC'}
+        value={currency === SupportedCurrency.Canto? 'Canto' : 'USDC'}
         onChange={e => {
-          if (e.target.value === 'ETH') {
-            setCurrency(SupportedCurrency.ETH);
+          if (e.target.value === 'Canto') {
+            setCurrency(SupportedCurrency.Canto);
           } else {
             setCurrency(SupportedCurrency.USDC);
           }
         }}
         chevronTop={38}
       >
-        <option value="ETH">ETH</option>
+        <option value="Canto">Canto</option>
         <option value="USDC">USDC</option>
       </BrandDropdown>
 
@@ -60,7 +60,7 @@ const TransferFundsDetailsStep: React.FC<ProposalActionModalStepProps> = props =
           setAmount(e.value);
           setFormattedAmount(e.formattedValue);
         }}
-        placeholder={currency === SupportedCurrency.ETH ? '0 ETH' : '0 USDC'}
+        placeholder={currency === SupportedCurrency.Canto ? '0 Canto' : '0 USDC'}
         isInvalid={parseFloat(amount) > 0 && new BigNumber(amount).isNaN()}
       />
 

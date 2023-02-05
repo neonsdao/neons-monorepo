@@ -275,6 +275,7 @@ const VotePage = ({
   const forNouns = getNounVotes(data, 1);
   const againstNouns = getNounVotes(data, 0);
   const abstainNouns = getNounVotes(data, 2);
+  
   const isV2Prop = dqInfo.proposal.quorumCoefficient > 0;
 
   return (
@@ -328,7 +329,7 @@ const VotePage = ({
           className={classes.toggleDelegateVoteView}
         >
           {isDelegateView ? (
-            <Trans>Switch to Noun view</Trans>
+            <Trans>Switch to Neon view</Trans>
           ) : (
             <Trans>Switch to delegate view</Trans>
           )}

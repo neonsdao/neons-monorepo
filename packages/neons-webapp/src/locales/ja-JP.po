@@ -7,32 +7,32 @@ msgstr ""
 "X-Generator: @lingui/cli\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: nounswtf\n"
+"X-Crowdin-Project: neonswtf\n"
 "X-Crowdin-Project-ID: 511110\n"
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: messages.po\n"
 "X-Crowdin-File-ID: 4\n"
-"Project-Id-Version: nounswtf\n"
+"Project-Id-Version: neonswtf\n"
 "Language-Team: Japanese\n"
 "PO-Revision-Date: 2022-05-05 04:36\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 
 #: src/components/DynamicQuorumInfoModal/index.tsx
-msgid "% of Nouns Currently Against"
+msgid "% of Neons Currently Against"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "'Nounders' are the group of ten builders that initiated Nouns. Here are the Nounders:"
-msgstr "「Nounders」とはNounsの創業に携わった10人の創業者のことであり、以下の人物で構成されています："
+msgid "'Neonders' are the group of ten builders that initiated Neons. Here are the Neonders:"
+msgstr "「Neonders」とはNeonsの創業に携わった10人の創業者のことであり、以下の人物で構成されています："
 
 #: src/components/ByLineHoverCard/index.tsx
 msgid "... and {0} more"
 msgstr "...そしてさらに3つ"
 
 #: src/components/Documentation/index.tsx
-msgid "100% of Noun auction proceeds are trustlessly sent to the treasury."
-msgstr "Nounオークションの売上は、第三者の介入無しで 100％トレジャリーに送られる仕組みになっています。"
+msgid "100% of Neon auction proceeds are trustlessly sent to the treasury."
+msgstr "Neonオークションの売上は、第三者の介入無しで 100％トレジャリーに送られる仕組みになっています。"
 
 #: src/pages/Nounders/index.tsx
 msgid "3.5 artists, 6.5 technologists"
@@ -47,26 +47,26 @@ msgstr "404: お探しの人、場所、物は見つかりませんでした。"
 #~ msgstr ""
 
 #: src/components/profileEvent/event/DesktopNounWinEvent/index.tsx
-#~ msgid "<0> Noun {0} </0>  won by <1><2/></1>"
+#~ msgid "<0> Neon {0} </0>  won by <1><2/></1>"
 #~ msgstr ""
 
 #: src/components/profileEvent/event/DesktopNounWinEvent/index.tsx
 #: src/components/profileEvent/event/MobileNounWinEvent/index.tsx
-msgid "<0> Noun {0} </0> sent to <1><2/></1>"
+msgid "<0> Neon {0} </0> sent to <1><2/></1>"
 msgstr ""
 
 #: src/components/profileEvent/event/DesktopNounWinEvent/index.tsx
 #: src/components/profileEvent/event/MobileNounWinEvent/index.tsx
-msgid "<0> Noun {0} </0> won by <1><2/></1>"
+msgid "<0> Neon {0} </0> won by <1><2/></1>"
 msgstr ""
 
 #: src/components/ByLineHoverCard/index.tsx
-msgid "<0>Delegated Noun: </0>"
-msgstr "委任Noun: "
+msgid "<0>Delegated Neon: </0>"
+msgstr "委任Neon: "
 
 #: src/components/ByLineHoverCard/index.tsx
-msgid "<0>Delegated Nouns: </0>"
-msgstr "委任Noun: "
+msgid "<0>Delegated Neons: </0>"
+msgstr "委任Neon: "
 
 #: src/components/ProposalHeader/index.tsx
 msgid "<0>Proposed by: </0><1>{proposer}</1><2>{proposedAtTransactionHash}</2>"
@@ -159,7 +159,7 @@ msgstr "アドレス"
 
 #: src/components/ProposalTransactionFormModal/index.tsx
 #~ msgid "Address (Callee or Recipient)"
-#~ msgstr "アドレス (他のスマート契約者であるカーリー、又はETHを受け取る受信者)"
+#~ msgstr "アドレス (他のスマート契約者であるカーリー、又はCANTOを受け取る受信者)"
 
 #: src/components/VoteCard/index.tsx
 msgid "Addresses"
@@ -171,16 +171,16 @@ msgid "Against"
 msgstr "反対"
 
 #: src/components/NounderNounContent/index.tsx
-msgid "All Noun auction proceeds are sent to the"
-msgstr "すべてのNounオークションの収益は、"
+msgid "All Neon auction proceeds are sent to the"
+msgstr "すべてのNeonオークションの収益は、"
 
 #: src/pages/Nounders/index.tsx
-msgid "All Noun auction proceeds are sent to the Nouns DAO. For this reason, we, the project's founders (‘Nounders’) have chosen to compensate ourselves with Nouns. Every 10th noun for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Nounders."
-msgstr "Nounオークションの収益は全て Nouns DAOに送られます。その為、我々、プロジェクトの創設者 (Nounders) はNounsで自らを補償することに決めました。 プロジェクトの最初の5年間の間は、毎回10体目のNounがマルチシグ(5/10) に送られた後、個々のナウンダーズに与えられ、配布されます。"
+msgid "All Neon auction proceeds are sent to the Neons DAO. For this reason, we, the project's founders (‘Neonders’) have chosen to compensate ourselves with Neons. Every 10th Neon for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Neonders."
+msgstr "Neonオークションの収益は全て Neons DAOに送られます。その為、我々、プロジェクトの創設者 (Neonders) はNeonsで自らを補償することに決めました。 プロジェクトの最初の5年間の間は、毎回10体目のNeonがマルチシグ(5/10) に送られた後、個々のナウンダーズに与えられ、配布されます。"
 
 #: src/components/Documentation/index.tsx
-msgid "All Nouns are members of Nouns DAO."
-msgstr "Nounsは全員Nouns DAOの会員です。"
+msgid "All Neons are members of Neons DAO."
+msgstr "Neonsは全員Neons DAOの会員です。"
 
 #: src/pages/CreateProposal/index.tsx
 #~ msgid "All Proposals"
@@ -221,8 +221,8 @@ msgid "Background"
 msgstr "背景"
 
 #: src/components/Documentation/index.tsx
-msgid "Because 100% of Noun auction proceeds are sent to Nouns DAO, Nounders have chosen to compensate themselves with Nouns. Every 10th Noun for the first 5 years of the project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the Nounder's multisig to be vested and shared among the founding members of the project."
-msgstr "Nounオークションの収益の100%がNouns DAOに送られるため、Nounderは自分達をNounsで補償することに決めました。プロジェクトの最初の5年間の間、毎回10番目のNoun (Noun ID #0, #10, #20, #30 など) が自動的にNoundersのマルチシグに送られ、プロジェクトの創設メンバー達に与えられて、共有されます。"
+msgid "Because 100% of Neon auction proceeds are sent to Neons DAO, Neonders have chosen to compensate themselves with Neons. Every 10th Neon for the first 5 years of the project (Neon ids #0, #10, #20, #30 and so on) will be automatically sent to the Neonder's multisig to be vested and shared among the founding members of the project."
+msgstr "Neonオークションの収益の100%がNeons DAOに送られるため、Neonderは自分達をNeonsで補償することに決めました。プロジェクトの最初の5年間の間、毎回10番目のNeon (Neon ID #0, #10, #20, #30 など) が自動的にNeondersのマルチシグに送られ、プロジェクトの創設メンバー達に与えられて、共有されます。"
 
 #: src/pages/CreateProposal/index.tsx
 msgid "Because this proposal contains a USDC fund transfer action we've added an additional ETH transaction to refill the TokenBuyer contract. This action allows to DAO to continue to trustlessly acquire USDC to fund proposals like this."
@@ -321,7 +321,7 @@ msgid "Connect your wallet"
 msgstr "ウォレットに接続してください"
 
 #: src/components/Documentation/index.tsx
-msgid "Consequently, the Nouns Foundation anticipates being the steward of the veto power until Nouns DAO is ready to implement an alternative, and therefore wishes to clarify the conditions under which it would exercise this power."
+msgid "Consequently, the Neons Foundation anticipates being the steward of the veto power until Neons DAO is ready to implement an alternative, and therefore wishes to clarify the conditions under which it would exercise this power."
 msgstr ""
 
 #: src/components/CreateProposalButton/index.tsx
@@ -430,8 +430,8 @@ msgid "EVERY DAY,"
 msgstr "毎日"
 
 #: src/components/Documentation/index.tsx
-msgid "Each time an auction is settled, the settlement transaction will also cause a new Noun to be minted and a new 24 hour auction to begin."
-msgstr "オークションが決済される度に、決済取引によって新しいNounがミントされ、また新たに24時間のオークションが開催されます。"
+msgid "Each time an auction is settled, the settlement transaction will also cause a new Neon to be minted and a new 24 hour auction to begin."
+msgstr "オークションが決済される度に、決済取引によって新しいNeonがミントされ、また新たに24時間のオークションが開催されます。"
 
 #: src/pages/Vote/index.tsx
 msgid "Ended"
@@ -462,8 +462,8 @@ msgid "Error"
 msgstr "エラー"
 
 #: src/components/NounInfoRowBirthday/index.tsx
-msgid "Error fetching Noun birthday"
-msgstr "Nounの誕生日を取得できませんでした"
+msgid "Error fetching Neon birthday"
+msgstr "Neonの誕生日を取得できませんでした"
 
 #: src/components/Footer/index.tsx
 #: src/components/NounInfoCard/index.tsx
@@ -505,13 +505,13 @@ msgid "Failed to fetch"
 msgstr "取得できませんでした"
 
 #: src/components/ProfileActivityFeed/index.tsx
-msgid "Failed to fetch Noun activity history"
-msgstr "Noun の活動履歴の取得に失敗しました。"
+msgid "Failed to fetch Neon activity history"
+msgstr "Neon の活動履歴の取得に失敗しました。"
 
 #: src/components/Holder/index.tsx
 #: src/components/NounInfoRowHolder/index.tsx
-msgid "Failed to fetch Noun info"
-msgstr "Nounに関する情報の取得に失敗しました"
+msgid "Failed to fetch Neon info"
+msgstr "Neonに関する情報の取得に失敗しました"
 
 #: src/components/VoteCard/index.tsx
 #: src/components/VoteModal/index.tsx
@@ -519,8 +519,8 @@ msgid "For"
 msgstr "賛成"
 
 #: src/components/NounderNounContent/index.tsx
-msgid "For this reason, we, the project's founders (‘Nounders’) have chosen to compensate ourselves with Nouns. Every 10th Noun for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Nounders."
-msgstr "その為、我々、プロジェクトの創設者 (Nounders) はNounsで自らを補償することに決めました。 プロジェクトの最初の5年間の間は、毎回10体目のNounがマルチシグ(5/10) に送られた後、個々のナウンダーズに与えられ、配布されます。"
+msgid "For this reason, we, the project's founders (‘Neonders’) have chosen to compensate ourselves with Neons. Every 10th Neon for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Neonders."
+msgstr "その為、我々、プロジェクトの創設者 (Neonders) はNeonsで自らを補償することに決めました。 プロジェクトの最初の5年間の間は、毎回10体目のNeonがマルチシグ(5/10) に送られた後、個々のナウンダーズに与えられ、配布されます。"
 
 #: src/components/Footer/index.tsx
 msgid "Forums"
@@ -539,8 +539,8 @@ msgid "Gas spent on voting will be refunded to you. Gnosis Safe is not yet suppo
 msgstr ""
 
 #: src/pages/Playground/index.tsx
-msgid "Generate Nouns"
-msgstr "Nounsを作る"
+msgid "Generate Neons"
+msgstr "Neonsを作る"
 
 #: src/components/ExploreGrid/ExploreNounDetail/index.tsx
 #: src/pages/Playground/index.tsx
@@ -570,8 +570,8 @@ msgid "Held by"
 msgstr "主催者"
 
 #: src/components/AuctionActivity/index.tsx
-msgid "Help mint the next Noun"
-msgstr "次にミントされるNounの投票をしてください"
+msgid "Help mint the next Neon"
+msgstr "次にミントされるNeonの投票をしてください"
 
 #: src/components/profileEvent/event/DesktopTransferEvent/index.tsx
 msgid "Holder changed from <0><1/></0> to <2><3/></2>"
@@ -582,8 +582,8 @@ msgid "Holder changed from<0><1/></0> to <2><3/></2>"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-#~ msgid "In addition to the precautions taken by Compound Governance, Nounders have given themselves a special veto right to ensure that no malicious proposals can be passed while the Noun supply is low. This veto right will only be used if an obviously harmful governance proposal has been passed, and is intended as a last resort."
-#~ msgstr "コンパウンドガバナンスによる予防措置に加えて、Nounの供給量が少ない間に悪意のある議案が通らないように、Noundersは特別な拒否権を保有しています。この拒否権は、明らかに有害なガバナンスの提案が可決された場合にのみ行使され、最後の手段として使用されます。"
+#~ msgid "In addition to the precautions taken by Compound Governance, Neonders have given themselves a special veto right to ensure that no malicious proposals can be passed while the Neon supply is low. This veto right will only be used if an obviously harmful governance proposal has been passed, and is intended as a last resort."
+#~ msgstr "コンパウンドガバナンスによる予防措置に加えて、Neonの供給量が少ない間に悪意のある議案が通らないように、Neondersは特別な拒否権を保有しています。この拒否権は、明らかに有害なガバナンスの提案が可決された場合にのみ行使され、最後の手段として使用されます。"
 
 #: src/components/Bid/index.tsx
 msgid "Insufficient bid amount 🤏"
@@ -602,8 +602,8 @@ msgid "Learn more"
 msgstr "詳細はこちら"
 
 #: src/components/Documentation/index.tsx
-msgid "Learn more below, or start creating Nouns off-chain using the {playgroundLink}."
-msgstr "詳しくは以下をご覧ください。また、{playgroundLink} を使いNounsのオフチェーンの作成をすることもできます。"
+msgid "Learn more below, or start creating Neons off-chain using the {playgroundLink}."
+msgstr "詳しくは以下をご覧ください。また、{playgroundLink} を使いNeonsのオフチェーンの作成をすることもできます。"
 
 #: src/components/NounInfoRowHolder/index.tsx
 msgid "Loading..."
@@ -630,8 +630,8 @@ msgid "No arguments required"
 msgstr "引数は必要ありません"
 
 #: src/components/Documentation/index.tsx
-msgid "No explicit rules exist for attribute scarcity; all Nouns are equally rare."
-msgstr "Nounsは全て等しく希少なため、属性の希少性についての明確なルールは存在しません。"
+msgid "No explicit rules exist for attribute scarcity; all Neons are equally rare."
+msgstr "Neonsは全て等しく希少なため、属性の希少性についての明確なルールは存在しません。"
 
 #: src/components/Proposals/index.tsx
 msgid "No proposals found"
@@ -648,94 +648,94 @@ msgid "Note"
 msgstr ""
 
 #: src/pages/Governance/index.tsx
-msgid "Noun"
-msgstr "Noun"
+msgid "Neon"
+msgstr "Neon"
 
 #: src/components/Documentation/index.tsx
-msgid "Noun Seeder Contract"
-msgstr "Nounシーダー契約"
+msgid "Neon Seeder Contract"
+msgstr "Neonシーダー契約"
 
 #: src/components/Documentation/index.tsx
-msgid "Noun Traits"
-msgstr "Nounsの特徴"
+msgid "Neon Traits"
+msgstr "Neonsの特徴"
 
 #: src/components/CurrentDelegatePannel/index.tsx
-msgid "Noun votes are not transferable, but are <0>delegatable</0>, which means you can assign your vote to someone else as long as you own your Noun."
-msgstr "Nounの票は譲渡できませんが (Nounの売却にはそれに応じて票も移ります)、委任することができます。"
+msgid "Neon votes are not transferable, but are <0>delegatable</0>, which means you can assign your vote to someone else as long as you own your Neon."
+msgstr "Neonの票は譲渡できませんが (Neonの売却にはそれに応じて票も移ります)、委任することができます。"
 
 #: src/components/AuctionActivityNounTitle/index.tsx
-msgid "Noun {0}"
-msgstr "Noun {0}"
+msgid "Neon {0}"
+msgstr "Neon {0}"
 
 #: src/components/Documentation/index.tsx
-msgid "Nounder distributions don't interfere with the cadence of 24 hour auctions. Nouns are sent directly to the Nounder's Multisig, and auctions continue on schedule with the next available Noun ID."
-msgstr "Nounder配布により24時間オークションの頻度に影響が及ぶことはありません。 NounsはNounderのマルチシグに直接送られ、オークションは次の有効なNouns IDによって予定通り継続されます。"
+msgid "Neonder distributions don't interfere with the cadence of 24 hour auctions. Neons are sent directly to the Neonder's Multisig, and auctions continue on schedule with the next available Neon ID."
+msgstr "Neonder配布により24時間オークションの頻度に影響が及ぶことはありません。 NeonsはNeonderのマルチシグに直接送られ、オークションは次の有効なNeons IDによって予定通り継続されます。"
 
 #: src/components/Documentation/index.tsx
-msgid "Nounder's Reward"
-msgstr "Nounderへの報酬"
+msgid "Neonder's Reward"
+msgstr "Neonderへの報酬"
 
 #: src/components/Documentation/index.tsx
-msgid "Nounders receive rewards in the form of Nouns (10% of supply for first 5 years)."
-msgstr "Nounderには、Nounsという形で報酬が与えられます (最初の5年間は供給量の10％)。"
+msgid "Neonders receive rewards in the form of Neons (10% of supply for first 5 years)."
+msgstr "Neonderには、Neonsという形で報酬が与えられます (最初の5年間は供給量の10％)。"
 
 #: src/components/Documentation/index.tsx
-#~ msgid "Nounders will proveably revoke this veto right when they deem it safe to do so. This decision will be based on a healthy Noun distribution and a community that is engaged in the governance process."
-#~ msgstr "Nounderは、安全であると判断した場合、この拒否権を無効にすることが出来ます。この決定は、健全なNounの分布と、ガバナンスプロセスに関与しているコミュニティに基づいて行われます。"
+#~ msgid "Neonders will proveably revoke this veto right when they deem it safe to do so. This decision will be based on a healthy Neon distribution and a community that is engaged in the governance process."
+#~ msgstr "Neonderは、安全であると判断した場合、この拒否権を無効にすることが出来ます。この決定は、健全なNeonの分布と、ガバナンスプロセスに関与しているコミュニティに基づいて行われます。"
 
 #: src/pages/Nounders/index.tsx
-msgid "Nounders' Reward"
-msgstr "Nounderへの報酬"
+msgid "Neonders' Reward"
+msgstr "Neonderへの報酬"
 
 #: src/pages/Governance/index.tsx
-msgid "Nouns"
-msgstr "Nouns"
+msgid "Neons"
+msgstr "Neons"
 
 #: src/components/NavBar/index.tsx
-msgid "Nouns & Traits"
+msgid "Neons & Traits"
 msgstr ""
 
 #: src/components/NounInfoRowHolder/index.tsx
-msgid "Nouns Auction House"
-msgstr "Nounsオークションハウス"
+msgid "Neons Auction House"
+msgstr "Neonsオークションハウス"
 
 #: src/components/Documentation/index.tsx
 #: src/components/NounderNounContent/index.tsx
 #: src/pages/Governance/index.tsx
-msgid "Nouns DAO"
-msgstr "Nouns DAO"
+msgid "Neons DAO"
+msgstr "Neons DAO"
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns DAO uses a fork of {compoundGovLink}."
-msgstr "Nouns DAOは {compoundGovLink} のフォークを使用しています。"
+msgid "Neons DAO uses a fork of {compoundGovLink}."
+msgstr "Neons DAOは {compoundGovLink} のフォークを使用しています。"
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns DAO utilizes a fork of {compoundGovLink} and is the main governing body of the Nouns ecosystem. The Nouns DAO treasury receives 100% of ETH proceeds from daily Noun auctions. Each Noun is an irrevocable member of Nouns DAO and entitled to one vote in all governance matters. Noun votes are non-transferable (if you sell your Noun the vote goes with it) but delegatable, which means you can assign your vote to someone else as long as you own your Noun."
-msgstr "Nouns DAOは {compoundGovLink} のフォークを利用しており、Nounsエコシステムの主要な統治機関です。毎日起こるNounオークションから得られるETHの収益の100％はNouns DAO トレジャリーにて受け取られています。各NounはNouns DAOの変更不可能なメンバーであり、すべてのガバナンスの問題で1票の投票権を有します。Nounの票は譲渡できませんが (Nounの売却にはそれに応じて票も移ります)、委任することができます。"
+msgid "Neons DAO utilizes a fork of {compoundGovLink} and is the main governing body of the Neons ecosystem. The Neons DAO treasury receives 100% of ETH proceeds from daily Neon auctions. Each Neon is an irrevocable member of Neons DAO and entitled to one vote in all governance matters. Neon votes are non-transferable (if you sell your Neon the vote goes with it) but delegatable, which means you can assign your vote to someone else as long as you own your Neon."
+msgstr "Neons DAOは {compoundGovLink} のフォークを利用しており、Neonsエコシステムの主要な統治機関です。毎日起こるNeonオークションから得られるETHの収益の100％はNeons DAO トレジャリーにて受け取られています。各NeonはNeons DAOの変更不可能なメンバーであり、すべてのガバナンスの問題で1票の投票権を有します。Neonの票は譲渡できませんが (Neonの売却にはそれに応じて票も移ります)、委任することができます。"
 
 #: src/pages/Playground/index.tsx
 msgid "Nouns Protocol"
 msgstr "Nounsプロトコル"
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns are an experimental attempt to improve the formation of on-chain avatar communities. While projects such as {cryptopunksLink} have attempted to bootstrap digital community and identity, Nouns attempt to bootstrap identity, community, governance, and a treasury that can be used by the community."
-msgstr "Nouns は、オンチェーン・アバターコミュニティの形成を改善するための実験的な試みです。{cryptopunksLink} などのプロジェクトがデジタルコミュニティとアイデンティティの構築を試みているのに対し、Nounsはアイデンティティ、コミュニティ、ガバナンス、そしてコミュニティが使用できるトレジャリーを構築することを試みています。"
+msgid "Neons are an experimental attempt to improve the formation of on-chain avatar communities. While projects such as {cryptopunksLink} have attempted to bootstrap digital community and identity, Neons attempt to bootstrap identity, community, governance, and a treasury that can be used by the community."
+msgstr "Neons は、オンチェーン・アバターコミュニティの形成を改善するための実験的な試みです。{cryptopunksLink} などのプロジェクトがデジタルコミュニティとアイデンティティの構築を試みているのに対し、Neonsはアイデンティティ、コミュニティ、ガバナンス、そしてコミュニティが使用できるトレジャリーを構築することを試みています。"
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns are generated randomly based Ethereum block hashes. There are no 'if' statements or other rules governing Noun trait scarcity, which makes all Nouns equally rare. As of this writing, Nouns are made up of:"
-msgstr "Nounsは、イーサリアムのブロックハッシュに基づいてランダムに生成されます。Nounの特徴の希少性を管理する「if」ステートメントやその他のルールは存在しないため、すべてのNounが等しく希少となります。現時点では、Nounsは以下のもので構成されています："
+msgid "Neons are generated randomly based Canto block hashes. There are no 'if' statements or other rules governing Neon trait scarcity, which makes all Neons equally rare. As of this writing, Neons are made up of:"
+msgstr "Neonsは、イーサリアムのブロックハッシュに基づいてランダムに生成されます。Neonの特徴の希少性を管理する「if」ステートメントやその他のルールは存在しないため、すべてのNeonが等しく希少となります。現時点では、Neonsは以下のもので構成されています："
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns are stored directly on Ethereum and do not utilize pointers to other networks such as IPFS. This is possible because Noun parts are compressed and stored on-chain using a custom run-length encoding (RLE), which is a form of lossless compression."
-msgstr "NounはEthereum上に直接保存されるため、IPFSのような他のネットワークへのポインタを利用することはありません。これは、Nounのパーツが可逆圧縮の一種であるカスタムのランレングス圧縮 (RLE) を使用してオンチェーンで圧縮・保存されていることから実現したものです。"
+msgid "Neons are stored directly on Ethereum and do not utilize pointers to other networks such as IPFS. This is possible because Neon parts are compressed and stored on-chain using a custom run-length encoding (RLE), which is a form of lossless compression."
+msgstr "NeonはEthereum上に直接保存されるため、IPFSのような他のネットワークへのポインタを利用することはありません。これは、Neonのパーツが可逆圧縮の一種であるカスタムのランレングス圧縮 (RLE) を使用してオンチェーンで圧縮・保存されていることから実現したものです。"
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns artwork is in the {publicDomainLink}."
-msgstr "Nounsのアートワークは {publicDomainLink} にあります。"
+msgid "Neons artwork is in the {publicDomainLink}."
+msgstr "Neonsのアートワークは {publicDomainLink} にあります。"
 
 #: src/pages/Governance/index.tsx
-msgid "Nouns govern <0>Nouns DAO</0>. Nouns can vote on proposals or delegate their vote to a third party. A minimum of <1>{nounsRequired} {0}</1> is required to submit proposals."
-msgstr "Nounsが統治する <0>Nouns DAO</0> 。Nounsは提案に対して投票したり、第三者に投票を委任することができますが、提案の提出には最低でも <1>{nounsRequired} {0}</1> 以上が必要です。"
+msgid "Neons govern <0>Neons DAO</0>. Neons can vote on proposals or delegate their vote to a third party. A minimum of <1>{NeonsRequired} {0}</1> is required to submit proposals."
+msgstr "Neonsが統治する <0>Neons DAO</0> 。Neonsは提案に対して投票したり、第三者に投票を委任することができますが、提案の提出には最低でも <1>{NeonsRequired} {0}</1> 以上が必要です。"
 
 #: src/components/DelegationCandidateInfo/index.tsx
 msgid "Now has"
@@ -750,20 +750,20 @@ msgid "On-Chain Artwork"
 msgstr "オンチェーンアートワーク"
 
 #: src/components/Documentation/index.tsx
-msgid "One Noun is equal to one vote."
-msgstr "1体のNounにつき、1票の投票件を得ることができます。"
+msgid "One Neon is equal to one vote."
+msgstr "1体のNeonにつき、1票の投票件を得ることができます。"
 
 #: src/components/Documentation/index.tsx
-msgid "One Noun is trustlessly auctioned every 24 hours, forever."
-msgstr "Nounsは24時間ごとに1体ずつ、第三者の介入無しでオークションに出され続けます。"
+msgid "One Neon is trustlessly auctioned every 24 hours, forever."
+msgstr "Neonsは24時間ごとに1体ずつ、第三者の介入無しでオークションに出され続けます。"
 
 #: src/pages/Playground/index.tsx
 msgid "Only 32x32 PNG images are accepted"
 msgstr "32x32 PNG画像のみ受け付けています"
 
 #: src/components/ProposalHeader/index.tsx
-msgid "Only Nouns you owned or were delegated to you before {0} are eligible to vote."
-msgstr "投票できるのは {0} 以前に所有していた、または委任されたNounsのみです。"
+msgid "Only Neons you owned or were delegated to you before {0} are eligible to vote."
+msgstr "投票できるのは {0} 以前に所有していた、または委任されたNeonsのみです。"
 
 #: src/components/NounProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
@@ -859,7 +859,7 @@ msgid "Reason (Optional)"
 msgstr "理由\"(任意)\""
 
 #: src/components/DynamicQuorumInfoModal/index.tsx
-msgid "Required % of Nouns to Pass"
+msgid "Required % of Neons to Pass"
 msgstr ""
 
 #: src/components/ProposalActionsModal/steps/FunctionCallReviewStep/index.tsx
@@ -961,8 +961,8 @@ msgid "Switch"
 msgstr "切り替え"
 
 #: src/pages/Vote/index.tsx
-msgid "Switch to Noun view"
-msgstr "Nounビューに切り替えます"
+msgid "Switch to Neon view"
+msgstr "Neonビューに切り替えます"
 
 #: src/pages/Vote/index.tsx
 msgid "Switch to delegate view"
@@ -981,31 +981,31 @@ msgid "Thank you for voting."
 msgstr "投票ありがとうございます。"
 
 #: src/components/Documentation/index.tsx
-msgid "The Noun Seeder contract is used to determine Noun traits during the minting process. The seeder contract can be replaced to allow for future trait generation algorithm upgrades. Additionally, it can be locked by the Nouns DAO to prevent any future updates. Currently, Noun traits are determined using pseudo-random number generation:"
-msgstr "Nounシーダー契約は、ミントのプロセスでNounsの特徴を決定するために使用されます。シーダー契約は、今後の特徴生成アルゴリズムのアップグレードを可能にするために変更することができ、さらに、今後のアップデートを防ぐためにNouns DAOによってロックすることも可能です。現在、Nounsの特徴は擬似乱数生成を用い決められています。"
+msgid "The Neon Seeder contract is used to determine Neon traits during the minting process. The seeder contract can be replaced to allow for future trait generation algorithm upgrades. Additionally, it can be locked by the Neons DAO to prevent any future updates. Currently, Neon traits are determined using pseudo-random number generation:"
+msgstr "Neonシーダー契約は、ミントのプロセスでNeonsの特徴を決定するために使用されます。シーダー契約は、今後の特徴生成アルゴリズムのアップグレードを可能にするために変更することができ、さらに、今後のアップデートを防ぐためにNeons DAOによってロックすることも可能です。現在、Neonsの特徴は擬似乱数生成を用い決められています。"
 
 #: src/pages/Nounders/index.tsx
-msgid "The Nounders"
-msgstr "Nounders"
+msgid "The Neonders"
+msgstr "Neonders"
 
 #: src/pages/Nounders/index.tsx
-msgid "The Nounders reward is intended as compensation for our pre and post-launch contributions to the project, and to help us participate meaningfully in governance as the project matures. Since there are 10 Nounders, after 5 years each Nounder could receive up to 1% of the Noun supply."
-msgstr "Noundersの報酬は、プロジェクト開始前と開始後の貢献に対する対価として提供されるほか、プロジェクトが成熟するにつれ、ガバナンスに有意義に参加できるよう支援することも目的としています。Noundersは10人なので、5年後には各ナウンダーは最大でNounの供給量の1%を受け取ることができます。"
+msgid "The Neonders reward is intended as compensation for our pre and post-launch contributions to the project, and to help us participate meaningfully in governance as the project matures. Since there are 10 Neonders, after 5 years each Neonder could receive up to 1% of the Neon supply."
+msgstr "Neondersの報酬は、プロジェクト開始前と開始後の貢献に対する対価として提供されるほか、プロジェクトが成熟するにつれ、ガバナンスに有意義に参加できるよう支援することも目的としています。Neondersは10人なので、5年後には各ナウンダーは最大でNeonの供給量の1%を受け取ることができます。"
 
 #: src/components/Documentation/index.tsx
-msgid "The Nouns Auction Contract will act as a self-sufficient Noun generation and distribution mechanism, auctioning one Noun every 24 hours, forever. 100% of auction proceeds (ETH) are automatically deposited in the Nouns DAO treasury, where they are governed by Noun owners."
-msgstr "Nounsオークション契約は、Noun生成・分配の自律的なメカニズムとして機能するため、24時間ごとに1体のNounを永遠にオークションにかけ続けます。オークションの収益 (ETH) は100%自動的にNounの所有者によって管理されている、Nouns DAO のトレジャリーに預けられます。"
+msgid "The Neons Auction Contract will act as a self-sufficient Neon generation and distribution mechanism, auctioning one Neon every 24 hours, forever. 100% of auction proceeds (ETH) are automatically deposited in the Neons DAO treasury, where they are governed by Neon owners."
+msgstr "Neonsオークション契約は、Neon生成・分配の自律的なメカニズムとして機能するため、24時間ごとに1体のNeonを永遠にオークションにかけ続けます。オークションの収益 (ETH) は100%自動的にNeonの所有者によって管理されている、Neons DAO のトレジャリーに預けられます。"
 
 #: src/components/Documentation/index.tsx
-msgid "The Nouns Foundation considers the veto an emergency power that should not be exercised in the normal course of business. The Nouns Foundation will veto proposals that introduce non-trivial legal or existential risks to the Nouns DAO or the Nouns Foundation, including (but not necessarily limited to) proposals that:"
+msgid "The Neons Foundation considers the veto an emergency power that should not be exercised in the normal course of business. The Neons Foundation will veto proposals that introduce non-trivial legal or existential risks to the Neons DAO or the Neons Foundation, including (but not necessarily limited to) proposals that:"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "The Nouns community has undertaken a preliminary exploration of proposal veto alternatives (‘rage quit’ etc.), but it is now clear that this is a difficult problem that will require significantly more research, development and testing before a satisfactory solution can be implemented."
+msgid "The Neons community has undertaken a preliminary exploration of proposal veto alternatives (‘rage quit’ etc.), but it is now clear that this is a difficult problem that will require significantly more research, development and testing before a satisfactory solution can be implemented."
 msgstr ""
 
 #: src/components/DynamicQuorumInfoModal/index.tsx
-#~ msgid "The Quorum (minimum number of For votes required to pass a proposal) is set as a function of the number of Against votes a proposal has recieved. It increases quadratically as a function of the % of Nouns voting against a prop, varying between Min Quorum and Max Quorum."
+#~ msgid "The Quorum (minimum number of For votes required to pass a proposal) is set as a function of the number of Against votes a proposal has recieved. It increases quadratically as a function of the % of Neons voting against a prop, varying between Min Quorum and Max Quorum."
 #~ msgstr ""
 
 #: src/components/DynamicQuorumInfoModal/index.tsx
@@ -1013,11 +1013,11 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/DynamicQuorumInfoModal/index.tsx
-msgid "The Threshold (minimum number of For votes required to pass a proposal) is set as a function of the number of Against votes a proposal has recieved. It increases linearly as a function of the % of Nouns voting against a prop, varying between Min Threshold and Max Threshold."
+msgid "The Threshold (minimum number of For votes required to pass a proposal) is set as a function of the number of Against votes a proposal has recieved. It increases linearly as a function of the % of Neons voting against a prop, varying between Min Threshold and Max Threshold."
 msgstr ""
 
 #: src/components/DynamicQuorumInfoModal/index.tsx
-#~ msgid "The Threshold (minimum number of For votes required to pass a proposal) is set as a function of the number of Against votes a proposal has recieved. It increases linearly as a function of the % of Nouns voting against a prop, varying between Min Treshold and Max Treshold."
+#~ msgid "The Threshold (minimum number of For votes required to pass a proposal) is set as a function of the number of Against votes a proposal has recieved. It increases linearly as a function of the % of Neons voting against a prop, varying between Min Treshold and Max Treshold."
 #~ msgstr ""
 
 #: src/components/DynamicQuorumInfoModal/index.tsx
@@ -1029,16 +1029,16 @@ msgid "The compressed parts are efficiently converted into a single base64 encod
 msgstr "圧縮されたパーツは、オンチェインで効率よく1つのbase64エンコードされたSVG画像に変換されます。そのために、各パーツは中間フォーマットにデコードされた後、オンチェーンでの文字列連結により一連のSVG rectsに変換されます。SVG全体が生成されると、それはbase64でエンコードされます。"
 
 #: src/pages/Playground/index.tsx
-msgid "The playground was built using the {nounsProtocolLink}. Noun's traits are determined by the Noun Seed. The seed was generated using {nounsAssetsLink} and rendered using the {nounsSDKLink}."
-msgstr "遊び場は{nounsProtocolLink} を使用して作られており、Nounの特徴は、Nounシードによって決まります。{nounsAssetsLink} でシードを生成し、{nounsSDKLink} でレンダリングされています。"
+msgid "The playground was built using the {nounsProtocolLink}. Neon's traits are determined by the Neon Seed. The seed was generated using {nounsAssetsLink} and rendered using the {nounsSDKLink}."
+msgstr "遊び場は{nounsProtocolLink} を使用して作られており、Neonの特徴は、Neonシードによって決まります。{nounsAssetsLink} でシードを生成し、{nounsSDKLink} でレンダリングされています。"
 
 #: src/components/Documentation/index.tsx
-msgid "The proposal veto right was initially envisioned as a temporary solution to the problem of ‘51% attacks’ on the Nouns DAO treasury. While Nounders initially believed that a healthy distribution of Nouns would be sufficient protection for the DAO, a more complete understanding of the incentives and risks has led to general consensus within the Nounders, the Nouns Foundation, and the wider community that a more robust game-theoretic solution should be implemented before the right is removed."
+msgid "The proposal veto right was initially envisioned as a temporary solution to the problem of ‘51% attacks’ on the Neons DAO treasury. While Neonders initially believed that a healthy distribution of Neons would be sufficient protection for the DAO, a more complete understanding of the incentives and risks has led to general consensus within the Neonders, the Neons Foundation, and the wider community that a more robust game-theoretic solution should be implemented before the right is removed."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "The treasury is controlled exclusively by Nouns via governance."
-msgstr "トレジャリーは、ガバナンスを通じてNounsが独占的に管理しています。"
+msgid "The treasury is controlled exclusively by Neons via governance."
+msgstr "トレジャリーは、ガバナンスを通じてNeonsが独占的に管理しています。"
 
 #: src/components/Documentation/index.tsx
 msgid "There are unfortunately no algorithmic solutions for making these determinations in advance (if there were, the veto would not be required), and proposals must be considered on a case by case basis."
@@ -1049,8 +1049,8 @@ msgid "There was an error voting for your account."
 msgstr "アカウントの投票中にエラーが発生しました。"
 
 #: src/components/ProfileActivityFeed/index.tsx
-msgid "This Noun has no activity, since it was just created. Check back soon!"
-msgstr "このNounは作成されたばかりで、動きがありません。また後ほどご確認ください！"
+msgid "This Neon has no activity, since it was just created. Check back soon!"
+msgstr "このNeonは作成されたばかりで、動きがありません。また後ほどご確認ください！"
 
 #: src/components/ProposalContent/index.tsx
 msgid "This transaction sends {0} USDC to <0/> via the DAO's PayerContract."
@@ -1061,8 +1061,8 @@ msgid "This transaction was automatically added to refill the TokenBuyer. Propos
 msgstr ""
 
 #: src/pages/Governance/index.tsx
-msgid "This treasury exists for <0>Nouns DAO</0> participants to allocate resources for the long-term growth and prosperity of the Nouns project."
-msgstr "このトレジャリーは、<0>Nouns DAO</0>の参加者がNounsプロジェクトの長期的な成長と繁栄目的に、リソースを配分するために存在しています。"
+msgid "This treasury exists for <0>Neons DAO</0> participants to allocate resources for the long-term growth and prosperity of the Neons project."
+msgstr "このトレジャリーは、<0>Neons DAO</0>の参加者がNeonsプロジェクトの長期的な成長と繁栄目的に、リソースを配分するために存在しています。"
 
 #: src/pages/Vote/index.tsx
 #: src/pages/Vote/index.tsx
@@ -1082,8 +1082,8 @@ msgstr ""
 #~ msgstr "コツ："
 
 #: src/components/Documentation/index.tsx
-msgid "Trait generation is not truly random. Traits can be predicted when minting a Noun on the pending block."
-msgstr "特徴生成は完全にランダムというわけではなく、形質は、保留中のブロックにNounをミントする際に予想することができます。"
+msgid "Trait generation is not truly random. Traits can be predicted when minting a Neon on the pending block."
+msgstr "特徴生成は完全にランダムというわけではなく、形質は、保留中のブロックにNeonをミントする際に予想することができます。"
 
 #: src/components/Bid/index.tsx
 #: src/components/Bid/index.tsx
@@ -1194,19 +1194,19 @@ msgid "Voted for"
 msgstr "賛成に投票"
 
 #: src/components/DelegateHoverCard/index.tsx
-msgid "Voted with<0>{numVotesForProp}</0>Noun"
-msgstr "<0>{numVotesForProp}</0>のNounで投票"
+msgid "Voted with<0>{numVotesForProp}</0>Neon"
+msgstr "<0>{numVotesForProp}</0>のNeonで投票"
 
 #: src/components/DelegateHoverCard/index.tsx
-msgid "Voted with<0>{numVotesForProp}</0>Nouns"
-msgstr "<0>{numVotesForProp}</0>のNounで投票"
+msgid "Voted with<0>{numVotesForProp}</0>Neons"
+msgstr "<0>{numVotesForProp}</0>のNeonで投票"
 
 #: src/components/VoteModal/index.tsx
-msgid "Voting with <0>{0}</0> Noun"
+msgid "Voting with <0>{0}</0> Neon"
 msgstr ""
 
 #: src/components/VoteModal/index.tsx
-msgid "Voting with <0>{0}</0> Nouns"
+msgid "Voting with <0>{0}</0> Neons"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
@@ -1224,8 +1224,8 @@ msgid "What now?"
 msgstr "これからどうする？"
 
 #: src/components/Documentation/index.tsx
-msgid "While settlement is most heavily incentivized for the winning bidder, it can be triggered by anyone, allowing the system to trustlessly auction Nouns as long as Ethereum is operational and there are interested bidders."
-msgstr "決済は落札者に最も大きなインセンティブが与えられるが、誰でも起動できるため、Ethereumが稼働し、関心のある入札者がいる限り、システムは第三者の介入無しでNounsをオークションにかけることができます。"
+msgid "While settlement is most heavily incentivized for the winning bidder, it can be triggered by anyone, allowing the system to trustlessly auction Neons as long as Ethereum is operational and there are interested bidders."
+msgstr "決済は落札者に最も大きなインセンティブが与えられるが、誰でも起動できるため、Ethereumが稼働し、関心のある入札者がいる限り、システムは第三者の介入無しでNeonsをオークションにかけることができます。"
 
 #: src/components/DelegationCandidateInfo/index.tsx
 msgid "Will have"
@@ -1253,8 +1253,8 @@ msgid "You already have an active or pending proposal"
 msgstr "すでに有効または保留中の提案があります"
 
 #: src/components/Documentation/index.tsx
-msgid "You can experiment with off-chain Noun generation at the {playgroundLink}."
-msgstr "{playgroundLink} にてオフチェーンのNoun生成を試すことができます。"
+msgid "You can experiment with off-chain Neon generation at the {playgroundLink}."
+msgstr "{playgroundLink} にてオフチェーンのNeon生成を試すことができます。"
 
 #: src/components/SettleManuallyBtn/index.tsx
 msgid "You can settle manually in 1 minute"
@@ -1293,7 +1293,7 @@ msgid "You've already delegated to this address"
 msgstr "あなたはすでにこのアドレスに委任しています"
 
 #: src/pages/Playground/index.tsx
-msgid "You've generated {0} years worth of Nouns"
+msgid "You've generated {0} years worth of Neons"
 msgstr "{0} 年分のナウンを生成しました"
 
 #: src/components/VoteModal/index.tsx

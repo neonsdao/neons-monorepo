@@ -57,11 +57,11 @@ const ByLineHoverCard: React.FC<ByLineHoverCardProps> = props => {
           <ScaleIcon height={15} width={15} className={classes.icon} />
           {sortedNounIds.length === 1 ? (
             <Trans>
-              <span>Delegated Noun: </span>
+              <span>Delegated Neon: </span>
             </Trans>
           ) : (
             <Trans>
-              <span>Delegated Nouns: </span>
+              <span>Delegated Neons: </span>
             </Trans>
           )}
 
