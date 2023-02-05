@@ -27,6 +27,7 @@ class IdenticonInner extends Component<IdenticonInnerProps> {
   }
 
   renderDavatar(address: string, provider: BaseProvider, size: number) {
+    if (!address) return this.renderJazzicon(address, size);
     return <Davatar address={address} size={size} provider={provider} />;
   }
 
