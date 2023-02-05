@@ -46,8 +46,6 @@ import { applyMiddleware, createStore, combineReducers, PreloadedState } from 'r
 import { routerMiddleware } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { nounPath } from './utils/history';
-import { push } from 'connected-react-router';
 import { LanguageProvider } from './i18n/LanguageProvider';
 
 dotenv.config();
@@ -163,7 +161,6 @@ const ChainSubscriber: React.FC = () => {
           setActiveAuction(reduxSafeNewAuction({ nounId, startTime, endTime, settled: false })),
         );
         const nounIdNumber = BigNumber.from(nounId).toNumber();
-        dispatch(push(nounPath(nounIdNumber)));
         dispatch(setOnDisplayAuctionNounId(nounIdNumber));
         dispatch(setLastAuctionNounId(nounIdNumber));
       };
