@@ -1,11 +1,6 @@
 import { Button, FloatingLabel, FormControl, Spinner } from 'react-bootstrap';
 import classes from './VoteModal.module.css';
-import {
-  useCastRefundableVoteWithReason,
-  useCastVote,
-  useCastVoteWithReason,
-  Vote,
-} from '../../wrappers/nounsDao';
+import { useCastVote, useCastVoteWithReason, Vote } from '../../wrappers/nounsDao';
 import { ReactNode, useCallback, useEffect, useState } from 'react';
 import { TransactionStatus } from '@usedapp/core';
 import NavBarButton, { NavBarButtonStyle } from '../NavBarButton';
