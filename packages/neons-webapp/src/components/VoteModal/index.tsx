@@ -26,7 +26,6 @@ const POST_SUCESSFUL_VOTE_MODAL_CLOSE_TIME_MS = 3000;
 const VoteModal = ({ show, onHide, proposalId, availableVotes }: VoteModalProps) => {
   const { castVote, castVoteState } = useCastVote();
   const { castVoteWithReason, castVoteWithReasonState } = useCastVoteWithReason();
-  useCastRefundableVoteWithReason();
   const [vote, setVote] = useState<Vote>();
   const [voteReason, setVoteReason] = useState('');
   const [isLoading, setIsLoading] = useState(false);
