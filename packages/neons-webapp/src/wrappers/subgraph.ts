@@ -94,6 +94,13 @@ export const auctionQuery = (auctionId: number) => gql`
       endTime
       noun {
         id
+        seed {
+          background
+          body
+          accessory
+          head
+          glasses
+        }
         owner {
           id
         }
@@ -133,16 +140,16 @@ export const bidsByAuctionQuery = (auctionId: string) => gql`
 export const nounQuery = (id: string) => gql`
  {
 	noun(id:"${id}") {
-	  id
-	  seed {
-	  background
-		body
-		accessory
-		head
-		glasses
-	}
+    id
+      seed {
+      background
+      body
+      accessory
+      head
+      glasses
+    }
 	  owner {
-		id
+		  id
 	  }
 	}
   }
