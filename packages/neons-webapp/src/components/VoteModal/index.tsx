@@ -1,8 +1,8 @@
 import { Button, FloatingLabel, FormControl, Spinner } from 'react-bootstrap';
 import classes from './VoteModal.module.css';
-import { useCastRefundableVote, useCastRefundableVoteWithReason, useCastVote, useCastVoteWithReason, Vote } from '../../wrappers/nounsDao';
+import { useCastVote, useCastVoteWithReason, Vote } from '../../wrappers/nounsDao';
 import { ReactNode, useCallback, useEffect, useState } from 'react';
-import { TransactionStatus, useEthers } from '@usedapp/core';
+import { TransactionStatus } from '@usedapp/core';
 import NavBarButton, { NavBarButtonStyle } from '../NavBarButton';
 import clsx from 'clsx';
 import { Trans } from '@lingui/macro';
@@ -19,11 +19,8 @@ interface VoteModalProps {
 const POST_SUCESSFUL_VOTE_MODAL_CLOSE_TIME_MS = 3000;
 
 const VoteModal = ({ show, onHide, proposalId, availableVotes }: VoteModalProps) => {
-  const { library, account } = useEthers();
   const { castVote, castVoteState } = useCastVote();
   const { castVoteWithReason, castVoteWithReasonState } = useCastVoteWithReason();
-  const { castRefundableVote, castRefundableVoteState } = useCastRefundableVote();
-  const { castRefundableVoteWithReason, castRefundableVoteWithReasonState } = useCastRefundableVoteWithReason();
   const [vote, setVote] = useState<Vote>();
   const [voteReason, setVoteReason] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -68,14 +65,6 @@ const VoteModal = ({ show, onHide, proposalId, availableVotes }: VoteModalProps)
     }
   }, []);
 
-  const signerIsContract = async () => {
-    if (!library || !account) {
-      return false;
-    }
-    const code = await library?.getCode(account);
-    return code !== '0x';
-  };
-
   // Cast vote transaction state hook
   useEffect(() => {
     handleVoteStateChange(castVoteState);
@@ -85,16 +74,6 @@ const VoteModal = ({ show, onHide, proposalId, availableVotes }: VoteModalProps)
   useEffect(() => {
     handleVoteStateChange(castVoteWithReasonState);
   }, [castVoteWithReasonState, handleVoteStateChange]);
-
-  // Cast refundable vote transaction state hook
-  useEffect(() => {
-    handleVoteStateChange(castRefundableVoteState);
-  }, [castRefundableVoteState, handleVoteStateChange]);
-
-  // Cast refundable vote with reason transaction state hook
-  useEffect(() => {
-    handleVoteStateChange(castRefundableVoteWithReasonState);
-  }, [castRefundableVoteWithReasonState, handleVoteStateChange]);
 
   // Auto close the modal after a transaction completes succesfully
   // Leave failed transaction up until user closes manually to allow for debugging
@@ -212,38 +191,18 @@ const VoteModal = ({ show, onHide, proposalId, availableVotes }: VoteModalProps)
                 return;
               }
               setIsLoading(true);
-              const isContract = await signerIsContract();
               const isReasonEmpty = voteReason.trim() === '';
-              if (isContract) {
-                if (isReasonEmpty) {
-                  castVote(proposalId, vote);
-                } else {
-                  castVoteWithReason(proposalId, vote, voteReason);
-                }
+
+              if (isReasonEmpty) {
+                castVote(proposalId, vote);
               } else {
-                if (isReasonEmpty) {
-                  castRefundableVote(proposalId, vote);
-                } else {
-                  castRefundableVoteWithReason(proposalId, vote, voteReason);
-                }
+                castVoteWithReason(proposalId, vote, voteReason);
               }
             }}
             className={vote === undefined ? classes.submitBtnDisabled : classes.submitBtn}
           >
             {isLoading ? <Spinner animation="border" /> : <Trans>Submit Vote</Trans>}
           </Button>
-
-          <div
-          className={classes.gasFreeVotingWrapper}
-          >
-            <span
-            className={classes.gasFreeVotingCopy}
-            >
-              <Trans>
-              Gas spent on voting will be refunded to you. Gnosis Safe is not yet supported.
-              </Trans>
-            </span>
-          </div>
         </div>
       )}
     </>
