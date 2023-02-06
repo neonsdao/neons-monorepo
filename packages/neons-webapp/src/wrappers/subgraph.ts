@@ -94,6 +94,13 @@ export const auctionQuery = (auctionId: number) => gql`
       endTime
       noun {
         id
+        seed {
+          background
+          body
+          accessory
+          head
+          glasses
+        }
         owner {
           id
         }
@@ -114,37 +121,37 @@ export const auctionQuery = (auctionId: number) => gql`
 
 export const bidsByAuctionQuery = (auctionId: string) => gql`
  {
-	bids(where:{auction: "${auctionId}"}) {
-	  id
-	  amount
-	  blockNumber
-	  blockTimestamp
-	  txIndex
-	  bidder {
-	  	id
-	  }
-	  noun {
-		id
-	  }
-	}
+	  bids(where:{auction: "${auctionId}"}) {
+      id
+      amount
+      blockNumber
+      blockTimestamp
+      txIndex
+      bidder {
+        id
+      }
+      noun {
+        id
+      }
+    }
   }
  `;
 
 export const nounQuery = (id: string) => gql`
  {
-	noun(id:"${id}") {
-	  id
-	  seed {
-	  background
-		body
-		accessory
-		head
-		glasses
-	}
-	  owner {
-		id
-	  }
-	}
+	  noun(id:"${id}") {
+      id
+      seed {
+        background
+        body
+        accessory
+        head
+        glasses
+      }
+      owner {
+        id
+      }
+    }
   }
  `;
 
@@ -197,21 +204,21 @@ export const latestBidsQuery = (first: number = 10) => gql`
 	  orderBy:blockTimestamp,
 	  orderDirection: desc
 	) {
-	  id
-	  bidder {
-		id
-	  }
-	  amount
-	  blockTimestamp
-	  txIndex
-	  blockNumber
-	  auction {
-		id
-		startTime
-		endTime
-		settled
-	  }
-	}
+      id
+      bidder {
+        id
+      }
+      amount
+      blockTimestamp
+      txIndex
+      blockNumber
+      auction {
+        id
+        startTime
+        endTime
+        settled
+      }
+    }
   }  
 `;
 

@@ -3,15 +3,12 @@ import { BigNumber } from '@ethersproject/bignumber';
 import { Trans } from '@lingui/macro';
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
-import { nounQuery } from '../../wrappers/subgraph';
+import { auctionQuery } from '../../wrappers/subgraph';
 import ShortAddress from '../ShortAddress';
 import { StandaloneNounCircular } from '../StandaloneNoun';
 import classes from './NounHoverCard.module.css';
 import { HeartIcon, CakeIcon } from '@heroicons/react/solid';
-import { isNounderNoun } from '../../utils/nounderNoun';
-import { useAppSelector } from '../../hooks';
 import { i18n } from '@lingui/core';
-import { getNounBirthday } from '../NounInfoRowBirthday';
 import clsx from 'clsx';
 
 interface NounHoverCardProps {
@@ -21,14 +18,9 @@ interface NounHoverCardProps {
 const NounHoverCard: React.FC<NounHoverCardProps> = props => {
   const { nounId } = props;
 
-  const { loading, error, data } = useQuery(nounQuery(nounId), {
+  const { loading, error, data } = useQuery(auctionQuery(parseInt(nounId)), {
     skip: nounId === null,
   });
-
-  const pastAuctions = useAppSelector(state => state.pastAuctions.pastAuctions);
-  if (!pastAuctions || !pastAuctions.length) {
-    return <></>;
-  }
 
   if (loading || !data || !nounId) {
     return (
@@ -39,14 +31,13 @@ const NounHoverCard: React.FC<NounHoverCardProps> = props => {
       </div>
     );
   }
-  const numericNounId = parseInt(nounId);
-  const nounIdForQuery = isNounderNoun(BigNumber.from(nounId)) ? numericNounId + 1 : numericNounId;
-  const startTime = getNounBirthday(nounIdForQuery, pastAuctions);
+
+  const startTime = data.auction.startTime;
 
   if (error || !startTime) {
     return <>Failed to fetch</>;
   }
-  const birthday = new Date(Number(startTime._hex) * 1000);
+  const birthday = new Date(Number(startTime) * 1000);
 
   return (
     <div className={classes.wrapper}>
@@ -73,7 +64,7 @@ const NounHoverCard: React.FC<NounHoverCardProps> = props => {
           <Trans>Held by</Trans>
         </span>
         <span className={classes.bold}>
-          <ShortAddress address={data.noun.owner.id} />
+          <ShortAddress address={data.auction.noun.owner.id} />
         </span>
       </div>
     </div>
