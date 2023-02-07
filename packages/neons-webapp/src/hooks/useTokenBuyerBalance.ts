@@ -13,9 +13,9 @@ const chainlinkInterface = ['function latestAnswer() external view returns (int2
 function useTokenBuyerBalance(): BigNumber | undefined {
   const { library } = useEthers();
 
-  const [ethBalance, setETHBalance] = useState<BigNumber | undefined>();
-  const [usdcBalance, setUSDCBalance] = useState<BigNumber | undefined>();
-  const [ethUsdcPrice, setETHUSDCPrice] = useState<BigNumber | undefined>();
+  const [cantoBalance, setCANTOBalance] = useState<BigNumber | undefined>();
+  const [noteBalance, setNOTEBalance] = useState<BigNumber | undefined>();
+  const [cantoNoteBalance, setCANTONOTEPrice] = useState<BigNumber | undefined>();
 
   const usdcContract = useMemo((): Contract | undefined => {
     if (!library || !addresses.usdcToken) return;
@@ -28,24 +28,24 @@ function useTokenBuyerBalance(): BigNumber | undefined {
 
   useEffect(() => {
     if (!library || !addresses.tokenBuyer) return;
-    library.getBalance(addresses.tokenBuyer).then(setETHBalance);
+    library.getBalance(addresses.tokenBuyer).then(setCANTOBalance);
   }, [library]);
 
   useEffect(() => {
     if (!usdcContract || !addresses.payerContract) return;
-    usdcContract.balanceOf(addresses.payerContract).then(setUSDCBalance);
+    usdcContract.balanceOf(addresses.payerContract).then(setNOTEBalance);
   }, [usdcContract]);
 
   useEffect(() => {
     if (!chainlinkEthUsdcContract) return;
-    chainlinkEthUsdcContract.latestAnswer().then(setETHUSDCPrice);
+    chainlinkEthUsdcContract.latestAnswer().then(setCANTONOTEPrice);
   }, [chainlinkEthUsdcContract]);
 
-  if (!ethUsdcPrice) {
-    return ethBalance;
+  if (!cantoNoteBalance) {
+    return cantoBalance;
   }
-  return ethBalance?.add(
-    usdcBalance?.mul(BigNumber.from(10).pow(20)).div(ethUsdcPrice) ?? BigNumber.from(0),
+  return cantoBalance?.add(
+    noteBalance?.mul(BigNumber.from(10).pow(20)).div(cantoNoteBalance) ?? BigNumber.from(0),
   );
 }
 

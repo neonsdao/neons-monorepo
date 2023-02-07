@@ -39,9 +39,9 @@ const CreateProposalPage = () => {
   const [titleValue, setTitleValue] = useState('');
   const [bodyValue, setBodyValue] = useState('');
 
-  const [totalUSDCPayment, setTotalUSDCPayment] = useState<number>(0);
-  const [tokenBuyerTopUpEth, setTokenBuyerTopUpETH] = useState<string>('0');
-  const ethNeeded = useEthNeeded(config.addresses.tokenBuyer ?? '', totalUSDCPayment);
+  const [totalNOTEPayment, setTotalNOTEPayment] = useState<number>(0);
+  const [tokenBuyerTopUpEth, setTokenBuyerTopUpCANTO] = useState<string>('0');
+  const ethNeeded = useEthNeeded(config.addresses.tokenBuyer ?? '', totalNOTEPayment);
 
   const handleAddProposalAction = useCallback(
     (transaction: ProposalTransaction) => {
@@ -53,21 +53,21 @@ const CreateProposalPage = () => {
       }
 
       if (transaction.usdcValue) {
-        setTotalUSDCPayment(totalUSDCPayment + transaction.usdcValue);
+        setTotalNOTEPayment(totalNOTEPayment + transaction.usdcValue);
       }
 
       setProposalTransactions([...proposalTransactions, transaction]);
       setShowTransactionFormModal(false);
     },
-    [proposalTransactions, totalUSDCPayment],
+    [proposalTransactions, totalNOTEPayment],
   );
 
   const handleRemoveProposalAction = useCallback(
     (index: number) => {
-      setTotalUSDCPayment(totalUSDCPayment - (proposalTransactions[index].usdcValue ?? 0));
+      setTotalNOTEPayment(totalNOTEPayment - (proposalTransactions[index].usdcValue ?? 0));
       setProposalTransactions(proposalTransactions.filter((_, i) => i !== index));
     },
-    [proposalTransactions, totalUSDCPayment],
+    [proposalTransactions, totalNOTEPayment],
   );
 
   useEffect(() => {
@@ -104,7 +104,7 @@ const CreateProposalPage = () => {
         }
       }
 
-      setTokenBuyerTopUpETH(ethNeeded ?? '0');
+      setTokenBuyerTopUpCANTO(ethNeeded ?? '0');
     }
   }, [
     ethNeeded,
@@ -232,16 +232,16 @@ const CreateProposalPage = () => {
           onRemoveProposalTransaction={handleRemoveProposalAction}
         />
 
-        {totalUSDCPayment > 0 && (
+        {totalNOTEPayment > 0 && (
           <Alert variant="secondary" className={classes.tokenBuyerNotif}>
             <b>
               <Trans>Note</Trans>
             </b>
             :{' '}
             <Trans>
-              Because this proposal contains a USDC fund transfer action we've added an additional
-              ETH transaction to refill the TokenBuyer contract. This action allows to DAO to
-              continue to trustlessly acquire USDC to fund proposals like this.
+              Because this proposal contains a NOTE fund transfer action we've added an additional
+              CANTO transaction to refill the TokenBuyer contract. This action allows to DAO to
+              continue to trustlessly acquire NOTE to fund proposals like this.
             </Trans>
           </Alert>
         )}
