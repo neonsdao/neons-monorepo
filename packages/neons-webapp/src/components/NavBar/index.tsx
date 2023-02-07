@@ -176,9 +176,34 @@ const NavBar = () => {
                   buttonStyle={nonWalletButtonStyle}
                 />
               </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/user"
+                className={clsx(classes.nounsNavLink, classes.exploreButton)}
+                onClick={closeNav}
+              >
+                <NavBarButton
+                  buttonText="My Neons"
+                  buttonIcon={<Noggles />}
+                  buttonStyle={nonWalletButtonStyle}
+                />
+              </Nav.Link>
             </div>
             <div className={clsx(responsiveUiUtilsClasses.desktopOnly)}>
               <NavDropdown buttonIcon={<Noggles />} buttonStyle={nonWalletButtonStyle}>
+                <Dropdown.Item
+                  className={clsx(
+                    usePickByState(
+                      navDropdownClasses.whiteInfoSelectedBottom,
+                      navDropdownClasses.coolInfoSelected,
+                      navDropdownClasses.warmInfoSelected,
+                      history,
+                    ),
+                  )}
+                  href="/user"
+                >
+                  My Neons
+                </Dropdown.Item>
                 <Dropdown.Item
                   className={clsx(
                     usePickByState(
