@@ -297,7 +297,7 @@ const formatProposalTransactionDetails = (details: ProposalTransactionDetails | 
       return {
         target,
         functionSig: name === '' ? 'transfer' : name === undefined ? 'unknown' : name,
-        callData: types ? types : value ? `${utils.formatEther(value)} ETH` : '',
+        callData: types ? types : value ? `${utils.formatEther(value)} CANTO` : '',
       };
     }
     const calldata = details.calldatas[i];
@@ -306,7 +306,7 @@ const formatProposalTransactionDetails = (details: ProposalTransactionDetails | 
       target,
       functionSig: name,
       callData: decoded.join(),
-      value: value.gt(0) ? `{ value: ${utils.formatEther(value)} ETH }` : '',
+      value: value.gt(0) ? `{ value: ${utils.formatEther(value)} CANTO }` : '',
     };
   });
 };
@@ -338,7 +338,10 @@ const getProposalState = (
   blockTimestamp: Date | undefined,
   proposal: ProposalSubgraphEntity,
 ) => {
-  const status =  (blockNumber && blockNumber > parseInt(proposal.endBlock)) ? ProposalState.ACTIVE : ProposalState[proposal.status];
+  const status =
+    blockNumber && blockNumber > parseInt(proposal.endBlock)
+      ? ProposalState.ACTIVE
+      : ProposalState[proposal.status];
   if (status === ProposalState.PENDING) {
     if (!blockNumber) {
       return ProposalState.UNDETERMINED;

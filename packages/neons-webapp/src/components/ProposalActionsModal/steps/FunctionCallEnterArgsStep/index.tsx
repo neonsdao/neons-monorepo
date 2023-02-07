@@ -9,8 +9,8 @@ import ModalTitle from '../../../ModalTitle';
 import ModalBottomButtonRow from '../../../ModalBottomButtonRow';
 
 export enum SupportedCurrencies {
-  ETH = 'ETH',
-  USDC = 'USDC',
+  CANTO = 'CANTO',
+  NOTE = 'NOTE',
 }
 
 const FunctionCallEnterArgsStep: React.FC<ProposalActionModalStepProps> = props => {
