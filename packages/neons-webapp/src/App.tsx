@@ -24,6 +24,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import dayjs from 'dayjs';
 import DelegatePage from './pages/DelegatePage';
 import { useReadonlyProvider } from './hooks/useReadonlyProvider';
+import User from './pages/User';
 
 function App() {
   const { account, chainId } = useEthers();
@@ -65,6 +66,7 @@ function App() {
             <Route exact path="/playground" component={Playground} />
             <Route exact path="/delegate" component={DelegatePage} />
             <Route exact path="/explore" component={ExplorePage} />
+            <Route exact path="/User" component={User} />
             <Route component={NotFoundPage} />
           </Switch>
           <Footer />

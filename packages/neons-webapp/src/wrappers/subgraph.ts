@@ -335,3 +335,26 @@ export const clientFactory = (uri: string) =>
     uri,
     cache: new InMemoryCache(),
   });
+
+export const userNounsIndex = (userAddress: string, perPage: number, page: number) => gql`
+  {
+    nouns(where: { owner: "${userAddress.toLowerCase()}" }, first: ${perPage}, skip: ${page * perPage}) {
+      id
+      seed {
+        background
+        body
+        accessory
+        head
+        glasses
+      }
+    }
+  }
+`;
+
+export const userTokens = (userAddress: string) => gql`
+  {
+    account(id: "${userAddress.toLowerCase()}") {
+      tokenBalance
+    }
+  }
+`;
