@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import classes from './UserGrid.module.css';
 import cx from 'classnames';
 import UserGridItem from './UserGridItem';
@@ -16,9 +16,9 @@ interface UserGridProps {
   visibleNounsList: Noun[];
   setVisibleNounsList: Function;
   buttonsRef: React.MutableRefObject<(HTMLButtonElement | null)[]>;
-  pageSize: number
-  page: number
-  setPage: Function
+  pageSize: number;
+  page: number;
+  setPage: Function;
 }
 
 type Noun = {
@@ -31,11 +31,11 @@ const placeholderNoun: Noun = { id: null, imgSrc: undefined };
 const UserGrid: React.FC<UserGridProps> = props => {
   /* ---------------------------------- props --------------------------------- */
   const nounsCount = props.nounCount;
-  const nounsList = props.nounsList
+  const nounsList = props.nounsList;
   const setVisibleNounsList = props.setVisibleNounsList;
-  const pageSize = props.pageSize
-  const page = props.page
-  const setPage = props.setPage
+  const pageSize = props.pageSize;
+  const page = props.page;
+  const setPage = props.setPage;
 
   /* --------------------------------- effects -------------------------------- */
   // set placeholder on initial load
@@ -55,8 +55,8 @@ const UserGrid: React.FC<UserGridProps> = props => {
   useEffect(() => {
     // check
     if (nounsCount <= 0) {
-      setVisibleNounsList([])
-      return
+      setVisibleNounsList([]);
+      return;
     }
 
     // set nouns for current page
@@ -68,28 +68,28 @@ const UserGrid: React.FC<UserGridProps> = props => {
         imgSrc: undefined,
       });
     }
-    
+
     setVisibleNounsList(nouns);
   }, [nounsCount, nounsList, page, pageSize, setVisibleNounsList]);
 
-   /* -------------------------------- callbacks ------------------------------- */
-   const onPrevious = useCallback(() => {
-      setPage((p: number) => {
-        if (p <= 0) {
-          return p;
-        }
-        return p - 1;
-      });
-    }, [setPage]);
+  /* -------------------------------- callbacks ------------------------------- */
+  const onPrevious = useCallback(() => {
+    setPage((p: number) => {
+      if (p <= 0) {
+        return p;
+      }
+      return p - 1;
+    });
+  }, [setPage]);
 
-    const onNext = useCallback(() => {
-      setPage((p: number) => {
-        if (p >= Math.ceil(nounsCount / pageSize) - 1) {
-          return p;
-        }
-        return p + 1;
-      });
-    }, [nounsCount, pageSize, setPage]);
+  const onNext = useCallback(() => {
+    setPage((p: number) => {
+      if (p >= Math.ceil(nounsCount / pageSize) - 1) {
+        return p;
+      }
+      return p + 1;
+    });
+  }, [nounsCount, pageSize, setPage]);
 
   /* ---------------------------------- main ---------------------------------- */
   return (
