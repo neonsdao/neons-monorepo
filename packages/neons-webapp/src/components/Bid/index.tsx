@@ -118,10 +118,10 @@ const Bid: React.FC<{
         show: true,
         title: <Trans>Insufficient bid amount 🤏</Trans>,
         message: (
-          <Trans>
+          <>
             Please place a bid higher than or equal to the minimum bid amount of {minBidEth(minBid)}{' '}
             CANTO
-          </Trans>
+          </>
         ),
       });
       setBidInput(minBidEth(minBid));

@@ -86,10 +86,8 @@ const ProposalContent: React.FC<ProposalContentProps> = props => {
                         <InformationCircleIcon className={classes.txnInfoIcon} />
                       </div>
                       <div>
-                        <Trans>
-                          This transaction was automatically added to refill the TokenBuyer.
-                          Proposers do not recieve this CANTO.
-                        </Trans>
+                        This transaction was automatically added to refill the TokenBuyer. Proposers
+                        do not recieve this CANTO.
                       </div>
                     </div>
                   )}

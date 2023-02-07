@@ -238,11 +238,11 @@ const CreateProposalPage = () => {
               <Trans>Note</Trans>
             </b>
             :{' '}
-            <Trans>
+            <>
               Because this proposal contains a NOTE fund transfer action we've added an additional
               CANTO transaction to refill the TokenBuyer contract. This action allows to DAO to
               continue to trustlessly acquire NOTE to fund proposals like this.
-            </Trans>
+            </>
           </Alert>
         )}
         <ProposalEditor
