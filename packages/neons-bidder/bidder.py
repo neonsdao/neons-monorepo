@@ -58,8 +58,8 @@ while True:
         if accessory_seed == "3":
             print("bidding higher for rare")
             
-            max_bid = int(int(config('MAX_RAGE_BG_BID')) * 1e18)
-            bid_increase = int(int(config('RAGE_BG_BID_INCREASE')) * 1e18)
+            max_bid = int(int(config('MAX_RARE_BG_BID')) * 1e18)
+            bid_increase = int(int(config('RARE_BG_BID_INCREASE')) * 1e18)
 
         if body_seed == "2":
             # Bid for agent up to 1.5k Canto
