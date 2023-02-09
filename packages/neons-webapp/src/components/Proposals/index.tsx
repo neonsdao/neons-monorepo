@@ -40,7 +40,9 @@ const getCountdownCopy = (proposal: Proposal, currentBlock: number, locale: Supp
         )
       : undefined;
 
-  const expiresDate = proposal && dayjs(proposal.eta).add(14, 'days');
+
+  const etaDate = dayjs(proposal.eta)
+  const expiresDate = proposal && dayjs(proposal.eta).add(2, 'days');
 
   const now = dayjs();
 
@@ -48,9 +50,17 @@ const getCountdownCopy = (proposal: Proposal, currentBlock: number, locale: Supp
     return <>Ends {endDate.locale(SUPPORTED_LOCALE_TO_DAYSJS_LOCALE[locale] || en).fromNow()}</>;
   }
   if (endDate?.isBefore(now)) {
-    return (
-      <>Expires {expiresDate.locale(SUPPORTED_LOCALE_TO_DAYSJS_LOCALE[locale] || en).fromNow()}</>
-    );
+    if (proposal.status === ProposalState.QUEUED) {
+      return (
+        <>
+          Executable {etaDate.locale(SUPPORTED_LOCALE_TO_DAYSJS_LOCALE[locale] || en).fromNow()}
+        </>
+      );
+    } else {
+      return (
+        <>Expires {expiresDate.locale(SUPPORTED_LOCALE_TO_DAYSJS_LOCALE[locale] || en).fromNow()}</>
+      );
+    }
   }
   return (
     <>
