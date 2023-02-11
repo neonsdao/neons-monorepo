@@ -339,7 +339,7 @@ const getProposalState = (
   proposal: ProposalSubgraphEntity,
 ) => {
   const status =
-    blockNumber && blockNumber > parseInt(proposal.endBlock) && ProposalState[proposal.status] !== ProposalState.QUEUED
+    blockNumber && blockNumber > parseInt(proposal.endBlock) && ProposalState[proposal.status] === ProposalState.PENDING
       ? ProposalState.ACTIVE
       : ProposalState[proposal.status];
 
